@@ -1,0 +1,29 @@
+.container {
+    margin-top: 10rem;
+    width: 100%;
+}
+
+.container input {
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    display: block;
+    border-radius: 1.2rem;
+    border-color: #91cc83;
+    border-width: thick;
+    border-style: solid;
+    background: none;
+    font-size: 1rem;
+    transition: 0.25s;
+    width: 45%;
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    font-family: 'Roboto Slab';
+}
+
+.container input:focus {
+    width: 60%;
+    border-color: #dbf1b6;
+    outline: none;
+    transition: 0.25s;
+}

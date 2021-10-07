@@ -1,0 +1,39 @@
+.login {
+    width: 35%;
+    height: 100vh;
+    background-color: #d2ffe1;
+    display: flex;
+    margin: 0;
+    border-bottom-left-radius: 1.2rem;
+    position: relative;
+    left: 5%;
+    animation: slide 3s ease infinite;
+    transition: 1s;
+    z-index: 0;
+}
+
+.login h1 {
+    text-align: center;
+    color: black;
+    z-index: 5;
+}
+
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 5%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.login:hover {
+    background-color: #ade9c1;
+    color: black;
+    left: 0;
+    animation-play-state: paused;
+    transition: 1s;
+}

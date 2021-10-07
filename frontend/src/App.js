@@ -1,9 +1,12 @@
-import './App.css';
+import "./App.css";
+import Homepage1 from "./components/homepage/Homepage1";
+import Navbar from "./components/homepage/Navbar";
 
 function App() {
   return (
     <div className="App">
-      Investor Assemble
+      <Navbar />
+      <Homepage1 />
     </div>
   );
 }
