@@ -1,5 +1,8 @@
 import classes from "./Feed.module.css";
 import React from "react";
+import Leftpane from "./Leftpane";
+import Rightpane from "./Rightpane";
+import Allposts from "./Allposts";
 import Navbar from "../homepage/Navbar";
 
 const Feed = () => {
@@ -8,7 +11,9 @@ const Feed = () => {
 
       <Navbar pos="unset" round="0" />
       <div className={classes.container}>
-        <h1>FEED</h1>
+        <Leftpane />
+        <Allposts />
+        <Rightpane />
       </div>
     </div>
   );

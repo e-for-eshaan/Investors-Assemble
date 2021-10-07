@@ -1,0 +1,4 @@
+.allposts {
+    flex: 2.5;
+    overflow-y: scroll;
+}
