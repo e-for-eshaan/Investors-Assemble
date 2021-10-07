@@ -1,0 +1,29 @@
+.circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: rgb(223, 247, 240);
+    display: inline-block;
+    margin: auto;
+    margin-bottom: 2em;
+    box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
+    -webkit-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
+    -moz-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
+}
+
+.card {
+    min-width: 10rem;
+    max-width: 13rem;
+    text-align: center;
+    margin: auto;
+}
+
+.text {
+    padding: 2rem;
+    border-radius: 1.2rem;
+    background-color: rgb(156, 224, 196);
+    text-align: center;
+    box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
+    -webkit-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
+    -moz-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
+}
