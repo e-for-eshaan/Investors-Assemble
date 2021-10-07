@@ -9,7 +9,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Homepage1 />
+      <hr />
       <Homepage2 />
+      <hr />
       <Footer/>
     </div>
   );
