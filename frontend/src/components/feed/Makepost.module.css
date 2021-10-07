@@ -1,0 +1,45 @@
+.container {
+    font-family: "Roboto Slab";
+    background-color: #b9e6c2;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+.container h3 {
+    margin: auto;
+}
+
+.container .input {
+    resize: none;
+    font-family: "Roboto Slab";
+    border-radius: 0.5rem;
+    border: none;
+    text-align: left;
+    padding-left: 0.5rem;
+    width: 100%;
+    margin: 0 1rem 0 1rem;
+}
+
+.btn {
+    background-color: teal;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.4rem;
+    font-family: "Roboto Slab";
+    margin-right: 1%;
+    cursor: pointer;
+}
+
+.btn:hover {
+    font-family: "Roboto Slab";
+    background-color: teal;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.fileupload {
+    cursor: pointer;
+    display: none;
+}
