@@ -1,0 +1,16 @@
+.wrapper {
+    background-color: gray;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.container {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.container p {
+    margin: 0;
+}

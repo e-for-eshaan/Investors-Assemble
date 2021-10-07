@@ -1,0 +1,13 @@
+.containerhead {
+    display: block;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 2fr));
+    max-width: 100vw;
+    overflow: hidden;
+    margin-bottom: 10rem;
+}
