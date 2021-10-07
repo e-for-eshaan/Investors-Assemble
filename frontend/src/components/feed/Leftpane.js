@@ -7,6 +7,9 @@ const Leftpane = (props) => {
         <div className = {classes.leftpane}>
                 <img src={dp} alt="" className = {classes.dp}/>
                 <div className = {classes.btn}>{props.name}</div>
+                <div className = {classes.btn}>{props.name}</div>
+                <div className = {classes.btn}>{props.name}</div>
+                <div className = {classes.btn}>{props.name}</div>
         </div>
     )
 }

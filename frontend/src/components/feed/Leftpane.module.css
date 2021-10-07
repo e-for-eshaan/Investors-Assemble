@@ -1,7 +1,6 @@
 .leftpane {
     flex: 0.5;
-    background-color: chartreuse;
-    background-color: #B4EEC0;
+    background-color: #BAE8D4;
     color: white;
     display: flex;
     flex-direction: column;
