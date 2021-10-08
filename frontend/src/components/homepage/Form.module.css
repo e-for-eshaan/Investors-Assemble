@@ -14,7 +14,7 @@
     background: none;
     font-size: 1rem;
     transition: 0.25s;
-    width: 45%;
+    width: 60%;
     background-color: white;
     color: black;
     font-weight: bolder;
@@ -22,7 +22,7 @@
 }
 
 .container input:focus {
-    width: 60%;
+    width: 65%;
     border-color: #dbf1b6;
     outline: none;
     transition: 0.25s;
