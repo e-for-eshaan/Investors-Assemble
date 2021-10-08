@@ -14,8 +14,14 @@ const Makepost = () => {
         placeholder="Tell the World"
         className={classes.input}
       ></textarea>
-      <button className = {classes.btn}><input type="file" name="uploadfile" id="img" className = {classes.fileupload}/>
-      <label for="img">Upload Image</label>
+      <button className={classes.btn}>
+        <input
+          type="file"
+          name="uploadfile"
+          id="img"
+          className={classes.fileupload}
+        />
+        <label htmlFor="img">Upload Image</label>
       </button>
       <button type="submit" className={classes.btn}>
         Post
