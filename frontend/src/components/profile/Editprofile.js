@@ -18,76 +18,78 @@ const Editprofile = (props) => {
         <div className={classes.rightpane}>
           <form>
             <table>
-              <tr>
-                <td>
-                  <h3> Name</h3>
-                </td>
-                <td>
-                  <p> {props.name} </p>
-                </td>
-                <td>
-                  <input type="text" placeholder="Enter new name" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3> Email</h3>
-                </td>
-                <td>
-                  <p> {props.email} </p>
-                </td>
-                <td>
-                  <input type="text" placeholder="Enter new E-mail" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3> Number</h3>
-                </td>
-                <td>
-                  <p> {props.number} </p>
-                </td>
-                <td>
-                  <input type="text" placeholder="Change Number" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3> City</h3>
-                </td>
-                <td>
-                  <p> {props.city} </p>
-                </td>
-                <td>
-                  <input type="text" placeholder="Change City" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3> Password</h3>
-                </td>
-                <td></td>
-                <td>
-                  <input type="text" placeholder="Enter new password" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3 className={classes.biohead}> Bio</h3>
-                </td>
-                <td className={classes.bio}>
-                  <p className={classes.bio}> {props.bio} </p>
-                </td>
-                <td>
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="Max 50 words"
-                  ></textarea>
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>
+                    <h3> Name</h3>
+                  </td>
+                  <td>
+                    <p> {props.name} </p>
+                  </td>
+                  <td>
+                    <input type="text" placeholder="Enter new name" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3> Email</h3>
+                  </td>
+                  <td>
+                    <p> {props.email} </p>
+                  </td>
+                  <td>
+                    <input type="text" placeholder="Enter new E-mail" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3> Number</h3>
+                  </td>
+                  <td>
+                    <p> {props.number} </p>
+                  </td>
+                  <td>
+                    <input type="text" placeholder="Change Number" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3> City</h3>
+                  </td>
+                  <td>
+                    <p> {props.city} </p>
+                  </td>
+                  <td>
+                    <input type="text" placeholder="Change City" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3> Password</h3>
+                  </td>
+                  <td></td>
+                  <td>
+                    <input type="text" placeholder="Enter new password" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h3 className={classes.biohead}> Bio</h3>
+                  </td>
+                  <td className={classes.bio}>
+                    <p className={classes.bio}> {props.bio} </p>
+                  </td>
+                  <td>
+                    <textarea
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="10"
+                      placeholder="Max 50 words"
+                    ></textarea>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </form>
         </div>
