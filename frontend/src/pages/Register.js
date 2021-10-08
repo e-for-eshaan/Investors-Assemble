@@ -63,7 +63,9 @@ const Home = () => {
 
           <input type="text" required placeholder="Your City" ref={location} />
           <input
-            type="number"
+            type="text"
+            maxLength="10"
+            max="10"
             placeholder="Your Mobile Number"
             ref={contactNo}
             required
@@ -102,6 +104,7 @@ const Home = () => {
                 style={{ display: "none" }}
                 type="file"
                 name="avatar"
+                ref={avatar}
                 id="img"
                 accept=".png,.jpeg,.jpg"
               />
