@@ -1,0 +1,89 @@
+.wrapper {
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.leftpane {
+    width: 30%;
+    height: 100%;
+    background-color: rgb(155, 223, 191);
+    padding: 1rem;
+}
+
+.rightpane {
+    background-color: rgb(206, 245, 221);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.leftpane img {
+    width: 80%;
+    border-radius: 0.5rem;
+}
+
+.leftpane h2,
+h3,
+.bio {
+    color: black;
+    background-color: rgb(198, 235, 212);
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.leftpane .bio {
+    text-align: left;
+    hyphens: auto;
+}
+
+.date {
+    align-self: flex-end;
+    font-weight: lighter;
+    margin: auto;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.rightpane {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightpane input,
+textarea {
+    margin: 1rem;
+}
+
+.rightpane table {
+    width: 80%;
+    padding: 1rem;
+    margin: auto;
+    vertical-align: top;
+}
+
+.rightpane td,
+input {
+    vertical-align: top;
+    margin: 0;
+    padding-top: 0;
+}
