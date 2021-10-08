@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 
 //file imports
 const authRouter = require("./routes/auth");
-// const userRouter = require("./routes/user");
+const userRouter = require("./routes/user");
 // const postRouter = require("./routes/posts");
 // app
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.json());
 
 // routing
 app.use("/api/auth", authRouter);
-// app.use("/api/users", userRouter);
+app.use("/api/users", userRouter);
 // app.use("/api/posts", postRouter);
 
 // MongoDB Connection
