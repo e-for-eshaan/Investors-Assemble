@@ -2,6 +2,10 @@ import classes from "./Homepage2.module.css";
 import React from "react";
 import Card from "./Card";
 import { Fade } from "react-awesome-reveal";
+import img1 from "../images/grow.gif"
+import img2 from "../images/idea.gif"
+import img3 from "../images/shake.gif"
+import img4 from "../images/recruit.gif"
 
 
 const Homepage2 = () => {
@@ -12,16 +16,16 @@ const Homepage2 = () => {
       </Fade>
       <div className={classes.wrap}>
         <Fade triggerOnce={true} >
-        <Card imgsrc="xyz" text="" head=""/>
+        <Card imgsrc={img1} text="" head=""/>
         </Fade>
         <Fade triggerOnce={true} delay={200}>
-        <Card imgsrc="xyz" text="" head=""/>
+        <Card imgsrc={img2} text="" head=""/>
         </Fade>
         <Fade triggerOnce={true} delay={400}>
-        <Card imgsrc="xyz" text="" head=""/>
+        <Card imgsrc={img3} text="" head=""/>
         </Fade>
         <Fade triggerOnce={true} delay={600}>
-        <Card imgsrc="xyz" text="" head=""/>
+        <Card imgsrc={img4} text="" head=""/>
         </Fade>
       </div>
     </div>

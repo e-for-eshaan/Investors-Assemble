@@ -20,10 +20,12 @@
 }
 
 .leftpane {
+    min-width: 10rem;
     width: 30%;
     height: 100%;
     background-color: rgb(155, 223, 191);
     padding: 1rem;
+    overflow-y: scroll;
 }
 
 .rightpane {
@@ -39,16 +41,36 @@
     border-radius: 0.5rem;
 }
 
-.leftpane h2,
-h3,
-.bio {
+.leftpane img {
+    width: 80%;
+    border-radius: 0.5rem;
+}
+
+.leftpane h2 {
     color: black;
     background-color: rgb(198, 235, 212);
     padding: 0.2rem;
     border-radius: 0.3rem;
 }
 
+.leftpane h3 {
+    color: black;
+    background-color: rgb(198, 235, 212);
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.leftpane h3 {
+    color: black;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+}
+
 .leftpane .bio {
+    color: black;
+    background-color: rgb(198, 235, 212);
+    padding: 0.2rem;
+    border-radius: 0.3rem;
     text-align: left;
     hyphens: auto;
 }
@@ -61,23 +83,63 @@ h3,
 .rightpane {
     display: flex;
     flex-direction: column;
+    overflow-x: scroll;
 }
 
 .rightpane input,
-textarea {
+.rightpane textarea {
+    border-radius: 0.5rem;
+    font-family: "Roboto Slab";
+    background-color: rgb(226, 255, 245);
+    text-decoration: none;
+    height: 1.2rem;
+    margin-top: 0;
+    padding: 0.3rem;
     margin: 1rem;
+    border: 0.2rem solid rgb(114, 158, 136);
+}
+
+.rightpane input,
+.rightpane textarea {
+    outline-width: 0;
 }
 
 .rightpane table {
     width: 80%;
     padding: 1rem;
     margin: auto;
+}
+
+.rightpane .bio {
+    font-size: small;
+    text-align: justify;
+    margin-bottom: auto;
+    margin-bottom: auto;
+    position: relative;
     vertical-align: top;
+}
+
+.rightpane .biohead {
+    margin-bottom: 100%;
+    vertical-align: top;
+}
+
+.rightpane textarea {
+    height: 6rem;
+    width: 80%;
+    resize: none;
+    background-color: rgb(212, 248, 236);
+    padding: 0.3rem;
+    font-family: "Roboto Slab";
+}
+
+.rightpane td {
+    padding: 1rem;
+    position: relative;
 }
 
 .rightpane td,
 input {
-    vertical-align: top;
     margin: 0;
     padding-top: 0;
 }

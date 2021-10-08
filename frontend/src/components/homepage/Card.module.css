@@ -11,6 +11,12 @@
     -moz-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
 }
 
+.circle img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
 .card {
     min-width: 10rem;
     max-width: 13rem;

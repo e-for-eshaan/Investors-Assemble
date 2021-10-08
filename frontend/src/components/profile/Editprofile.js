@@ -19,58 +19,76 @@ const Editprofile = (props) => {
           <form action="">
             <table>
               <tr>
-                <td>Name</td>
-                <td>{props.name}</td>
+                <td>
+                  
+                  <h3> Name</h3>
+                </td>
+                <td>
+                  
+                  <p> {props.name} </p>
+                </td>
                 <td>
                   <input type="text" placeholder="Enter new name" />
                 </td>
-                <td>
-                    <button type="submit">Submit</button>
-                </td>
               </tr>
               <tr>
-                <td>Email</td>
-                <td>{props.email}</td>
+                <td>
+                  
+                  <h3> Email</h3>
+                </td>
+                <td>
+                  
+                  <p> {props.email} </p>
+                </td>
                 <td>
                   <input type="text" placeholder="Enter new E-mail" />
                 </td>
-                <td>
-                    <button type="submit">Submit</button>
-                </td>
               </tr>
               <tr>
-                <td>Number</td>
-                <td>{props.number}</td>
+                <td>
+                  
+                  <h3> Number</h3>
+                </td>
+                <td>
+                  
+                  <p> {props.number} </p>
+                </td>
                 <td>
                   <input type="text" placeholder="Change Number" />
                 </td>
-                <td>
-                    <button type="submit">Submit</button>
-                </td>
               </tr>
               <tr>
-                <td>City</td>
-                <td>{props.city}</td>
+                <td>
+                  
+                  <h3> City</h3>
+                </td>
+                <td>
+                  
+                  <p> {props.city} </p>
+                </td>
                 <td>
                   <input type="text" placeholder="Change City" />
                 </td>
-                <td>
-                    <button type="submit">Submit</button>
-                </td>
               </tr>
               <tr>
-                <td>Password</td>
+                <td>
+                  
+                  <h3> Password</h3>
+                </td>
                 <td></td>
                 <td>
                   <input type="text" placeholder="Enter new password" />
                 </td>
-                <td>
-                    <button type="submit">Submit</button>
-                </td>
               </tr>
               <tr>
-                <td>Bio</td>
-                <td >{props.bio}</td>
+                <td>
+                  
+                  <h3 className = {classes.biohead}> Bio</h3>
+                </td>
+                <td className = {classes.bio}>
+                  
+                  <p className = {classes.bio}> {props.bio} </p>
+                </td>
                 <td>
                   <textarea
                     name=""
@@ -99,4 +117,7 @@ Editprofile.defaultProps = {
   image: dp,
   date: "24th July",
   accounttype: "investor",
+  email: "xyzxyz@zyz.com",
+  number: "9089786767",
+  city: "atlantis",
 };

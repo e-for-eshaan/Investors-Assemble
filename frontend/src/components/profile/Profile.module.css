@@ -27,7 +27,6 @@
 }
 
 .rightpane {
-    background-color: rgb(206, 245, 221);
     width: 100%;
     height: 100%;
     margin: 0;
@@ -43,15 +42,18 @@
 }
 
 .leftpane h2,
-h3,
-.bio {
+.leftpane h3 {
     color: black;
-    background-color: rgb(198, 235, 212);
+    background-color: rgb(93, 151, 115);
     padding: 0.2rem;
     border-radius: 0.3rem;
 }
 
 .leftpane .bio {
+    color: black;
+    background-color: rgb(198, 235, 212);
+    padding: 0.2rem;
+    border-radius: 0.3rem;
     text-align: left;
     hyphens: auto;
 }
