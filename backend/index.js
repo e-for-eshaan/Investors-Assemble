@@ -7,8 +7,10 @@ const dotenv = require("dotenv");
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const postRouter = require("./routes/posts");
+
 // app
 const app = express();
+
 //middlewares
 dotenv.config();
 app.use(express.json());
