@@ -3,7 +3,10 @@ import React, { useEffect, useState } from "react";
 import dp from "../images/profile.png";
 import axios from "axios";
 
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+
 const Newpost = (props) => {
+  const { loggedUser } = props;
   // state for storing user details of each post
   const [user, setUser] = useState({});
   // fetching user details of each post from API using props.userId
@@ -14,6 +17,20 @@ const Newpost = (props) => {
     };
     fetchUser();
   }, [props.userId]);
+
+  const handleDeletePost = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.delete(`/api/posts/${props.postId}`, {
+        data: {
+          userId: props.userId,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   //   console.log(user);
   return (
     <div className={classes.newpost}>
@@ -25,6 +42,11 @@ const Newpost = (props) => {
         <h2>{user.name}</h2>
         <div className={classes.time}>
           <h6>{props.time}</h6>
+          {loggedUser._id === user._id && (
+            <i style={{ cursor: "pointer" }} onClick={handleDeletePost}>
+              <DeleteOutlineOutlinedIcon />
+            </i>
+          )}
         </div>
       </div>
       <div className={classes.text}>

@@ -45,6 +45,8 @@ const Profile = (props) => {
           {userPosts.length > 0
             ? userPosts.map((post) => (
                 <Newpost
+                  postId={post._id}
+                  loggedUser={user}
                   key={post._id}
                   userId={post.userId}
                   time={format(post.createdAt)}
