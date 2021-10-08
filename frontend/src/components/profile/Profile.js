@@ -20,6 +20,7 @@ const Profile = (props) => {
     };
     fetchUserPosts();
   }, [userId, userPosts]);
+
   return (
     <div className={classes.wrapper}>
       <Navbar pos="relative" round="0" />
