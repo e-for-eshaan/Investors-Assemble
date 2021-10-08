@@ -1,31 +1,58 @@
 import classes from "./Profile.module.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../homepage/Navbar";
 import dp from "../images/profile.png";
 import Newpost from "../feed/Newpost";
 import Footer from "../homepage/Footer";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { format } from "timeago.js";
 
 const Profile = (props) => {
+  const [userPosts, setUserPosts] = useState([]);
+
+  const { userId } = props;
+  const { user } = props;
+  useEffect(() => {
+    const fetchUserPosts = async () => {
+      const { data } = await axios.get(`/api/posts/profile/${userId}`);
+      setUserPosts(data);
+    };
+    fetchUserPosts();
+  }, [userId, userPosts]);
   return (
     <div className={classes.wrapper}>
       <Navbar pos="relative" round="0" />
       <div className={classes.container}>
         <div className={classes.leftpane}>
-          <img src={props.image} alt="" />
-          <h2>{props.name}</h2>
-          <h3> {props.accounttype}</h3>
-          <p className={classes.bio}>{props.bio}</p>
-          <h3 className={classes.date}> Joined: {props.date}</h3>
-          <Link to='/user/editprofile'><h3>Edit Profile</h3></Link>
+          <img
+            src={user.avatar === "" ? props.image : user.avatar}
+            alt="404_user_img"
+          />
+          <h2>{user.name}</h2>
+          <h3> {user.isInvestor === 0 ? "Startup" : "Investor"}</h3>
+          <p className={classes.bio}>{user.bio}</p>
+          <h3 className={classes.date}> Joined: {format(user.createdAt)}</h3>
+          {userId === user._id && (
+            <Link to="/user/editprofile">
+              <h3>Edit Profile</h3>
+            </Link>
+          )}
         </div>
         <div className={classes.rightpane}>
-            <h1>MY POSTS</h1>
-          <Newpost />
-          <Newpost />
-          <Newpost />
-          <Newpost />
-          <Footer/>
+          <h1>MY POSTS</h1>
+          {userPosts.length > 0
+            ? userPosts.map((post) => (
+                <Newpost
+                  key={post._id}
+                  userId={post.userId}
+                  time={format(post.createdAt)}
+                  desc={post.desc}
+                  img={post.img}
+                />
+              ))
+            : "NO POSTS AVAILABLE"}
+          <Footer />
         </div>
       </div>
     </div>

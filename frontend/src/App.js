@@ -3,29 +3,42 @@ import "./App.css";
 import Home from "./pages/Home";
 import Feed from "./components/feed/Feed";
 import Register from "./pages/Register";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Editprofile from "./components/profile/Editprofile";
 import Profile from "./components/profile/Profile";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  // const [user, setUser] = useState({});
+  const { user } = useContext(AuthContext);
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route path="/" exact>
-            <Home />
+            {user ? <Redirect to="/feed" /> : <Home />}
           </Route>
           <Route path="/register">
-            <Register />
+            {user ? <Redirect to="/feed" /> : <Register />}
           </Route>
           <Route path="/feed">
-            <Feed />
+            {user ? <Feed user={user} /> : <Redirect to="/" />}
           </Route>
           <Route path="/user/profile">
-            <Profile />
+            {user ? (
+              <Profile userId={user._id} user={user} />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
           <Route path="/user/editprofile">
-            <Editprofile />
+            {user ? <Editprofile user={user} /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </div>
