@@ -98,7 +98,7 @@ const Home = () => {
           />
           <br />
           <button>
-            <label for="img">
+            <label htmlFor="img">
               Upload Image
               <input
                 style={{ display: "none" }}
