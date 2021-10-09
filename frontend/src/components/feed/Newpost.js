@@ -11,11 +11,17 @@ const Newpost = (props) => {
   const [user, setUser] = useState({});
   // fetching user details of each post from API using props.userId
   useEffect(() => {
+    let mounted = true;
     const fetchUser = async () => {
       const res = await axios.get(`/api/users/${props.userId}`);
-      setUser(res.data);
+      if (mounted) {
+        setUser(res.data);
+      }
     };
     fetchUser();
+    return () => {
+      mounted = false;
+    };
   }, [props.userId]);
 
   const handleDeletePost = async (e) => {

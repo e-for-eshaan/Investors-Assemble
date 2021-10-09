@@ -11,13 +11,20 @@ const Allposts = (props) => {
   // console.log(user);
   // state for storing all the posts in DB
   const [posts, setPosts] = useState([]);
+
   // fetching posts from DB
-  const fetchPosts = async () => {
-    const { data } = await axios.get("/api/posts/all");
-    setPosts(data);
-  };
   useEffect(() => {
+    let mounted = true;
+    const fetchPosts = async () => {
+      const { data } = await axios.get("/api/posts/all");
+      if (mounted) {
+        setPosts(data);
+      }
+    };
     fetchPosts();
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   return (
