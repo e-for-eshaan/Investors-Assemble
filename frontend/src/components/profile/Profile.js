@@ -14,11 +14,17 @@ const Profile = (props) => {
   const { userId } = props;
   const { user } = props;
   useEffect(() => {
+    let mounted = true;
     const fetchUserPosts = async () => {
       const { data } = await axios.get(`/api/posts/profile/${userId}`);
-      setUserPosts(data);
+      if (mounted) {
+        setUserPosts(data);
+      }
     };
     fetchUserPosts();
+    return () => {
+      mounted = false;
+    };
   }, [userId, userPosts]);
 
   return (

@@ -11,11 +11,17 @@ const Newpost = (props) => {
   const [user, setUser] = useState({});
   // fetching user details of each post from API using props.userId
   useEffect(() => {
+    let mounted = true;
     const fetchUser = async () => {
       const res = await axios.get(`/api/users/${props.userId}`);
-      setUser(res.data);
+      if (mounted) {
+        setUser(res.data);
+      }
     };
     fetchUser();
+    return () => {
+      mounted = false;
+    };
   }, [props.userId]);
 
   const handleDeletePost = async (e) => {
@@ -51,7 +57,11 @@ const Newpost = (props) => {
       </div>
       <div className={classes.text}>
         {props.img !== "" && (
-          <img src={props.img} alt="404_post_img" className={classes.image} />
+          <img
+            src={`http://localhost:5000/images/${props.img}`}
+            alt="404_post_img"
+            className={classes.image}
+          />
         )}
         {props.desc}
       </div>
