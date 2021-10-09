@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import Footer from "../components/homepage/Footer";
+import classes from "./Register.module.css"
 import Navbar from "../components/homepage/Navbar";
 import { useHistory } from "react-router";
 import axios from "axios";
-
+import investor from "../components/images/investor.jpg"
+import startup from "../components/images/startup.jpg"
 const Home = () => {
   const name = useRef();
   const email = useRef();
@@ -44,25 +46,19 @@ const Home = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div>
-        <form
+    <div className = {classes.wrapper}>
+      <Navbar pos='relative'/>
+      <div className = {classes.container}>
+        <form className = {classes.form}
           onSubmit={handleRegisterClick}
-          style={{
-            paddingTop: "50px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+
         >
           <h1>Sign Up</h1>
-          <input type="text" required placeholder="Your Name" ref={name} />
-          <input type="email" required placeholder="Your Email" ref={email} />
+          <input className = {classes.input} type="text" required placeholder="Your Name" ref={name} />
+          <input className = {classes.input} type="email" required placeholder="Your Email" ref={email} />
 
-          <input type="text" required placeholder="Your City" ref={location} />
-          <input
+          <input className = {classes.input} type="text" required placeholder="Your City" ref={location} />
+          <input className = {classes.input}
             type="text"
             maxLength="10"
             max="10"
@@ -70,27 +66,30 @@ const Home = () => {
             ref={contactNo}
             required
           />
-          <input
+          <input className = {classes.input}
             ref={investorOrStartup}
             type="text"
             placeholder="Are you an Investor or a Startup? Type 'Investor' or 'Startup'"
             required
           />
-          <textarea
-            style={{ height: "30px", width: "172px" }}
+          <div className = {classes.images}>
+            <img src={investor} alt="" />
+            <img src={startup} alt="" />
+          </div>
+          <textarea className = {classes.textarea}
             placeholder="Your Bio"
             required
             ref={bio}
           />
 
           <br />
-          <input
+          <input className = {classes.input}
             type="password"
             placeholder="Create password"
             ref={password}
             required
           />
-          <input
+          <input className = {classes.input}
             type="password"
             ref={confirmpassword}
             required
@@ -100,7 +99,7 @@ const Home = () => {
           <button>
             <label htmlFor="img">
               Upload Image
-              <input
+              <input className = {classes.input}
                 style={{ display: "none" }}
                 type="file"
                 name="avatar"
@@ -114,7 +113,7 @@ const Home = () => {
         </form>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

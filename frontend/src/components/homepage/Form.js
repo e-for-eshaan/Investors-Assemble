@@ -41,7 +41,7 @@ const Form = () => {
         </button>
         <h4>New User?</h4>
         <span>
-          <Link to="/register">Register Here</Link>
+          <Link  style={{ textDecoration: 'none' }} to="/register">Register Here</Link>
         </span>
       </form>
     </div>

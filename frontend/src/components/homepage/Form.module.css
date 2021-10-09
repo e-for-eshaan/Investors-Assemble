@@ -27,3 +27,26 @@
     outline: none;
     transition: 0.25s;
 }
+
+button {
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    margin: 1rem;
+    font-family: 'Roboto Slab';
+    color: rgb(63, 131, 103);
+    border: none;
+    background-color: rgb(197, 240, 223);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(96, 177, 144);
+    color: white;
+    transition: 0.5s;
+}
+
+button:focus {
+    background-color: rgb(201, 253, 181);
+    color: black;
+    transition: 0.1s;
+}

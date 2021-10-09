@@ -1,0 +1,60 @@
+.input {
+    margin: 0.3rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    border: 2px green solid;
+    outline: none;
+    font-family: "Roboto Slab";
+    color: green;
+    background-color: rgb(211, 255, 228);
+    width: 28%;
+    max-width: 20rem;
+    transition: 0.5s;
+}
+
+.input:focus {
+    width: 35%;
+    transition: 0.5s;
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+
+.images img {
+    width: 10rem;
+    border-radius: 0.8rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    overflow-y: scroll;
+}
+
+.wrapper {
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    border: 2px green solid;
+    background-color: rgb(211, 255, 240);
+    resize: none;
+    outline: none;
+    height: 5rem;
+}

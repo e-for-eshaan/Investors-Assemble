@@ -6,6 +6,11 @@
     padding: 0.5rem;
 }
 
+.container:hover {
+    background-color: rgb(190, 238, 213);
+    transition: 0.5s;
+}
+
 .text {
     text-align: left;
     font-size: 0.8rem;

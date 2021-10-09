@@ -13,7 +13,6 @@ const Leftpane = (props) => {
         className={classes.dp}
       />
       <div className={classes.btn}>{user.name}</div>
-      <div className={classes.btn}>{user.email}</div>
       <div className={classes.btn}>{user.location}</div>
       <div className={classes.btn}>
         {user.isInvestor === 0 ? "Startup" : "Investor"}

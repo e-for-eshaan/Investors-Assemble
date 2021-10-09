@@ -1,8 +1,6 @@
 import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
 import { useContext } from "react";
-
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = (props) => {
@@ -17,7 +15,7 @@ const Navbar = (props) => {
         borderBottomRightRadius: props.round,
       }}
     >
-      <img src={logo} alt="" className={classes.logo} />
+     <Link to='/' style={{ textDecoration: 'none' }}> <div className = {classes.logo}>Investor's Assemble</div></Link>
       <ul className={classes.list}>
         {!user && (
           <Link to="/" className={classes.listitem}>

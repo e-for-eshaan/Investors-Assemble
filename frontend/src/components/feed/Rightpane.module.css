@@ -6,6 +6,11 @@
     flex-direction: column;
 }
 
+.rightpane a {
+    text-decoration: none;
+    color: black;
+}
+
 .scroll {
     height: 40%;
     margin: 1rem;

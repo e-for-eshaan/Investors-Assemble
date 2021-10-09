@@ -29,6 +29,7 @@
 }
 
 .rightpane {
+    display: inline-block;
     background-color: rgb(206, 245, 221);
     width: 100%;
     height: 100%;
@@ -81,13 +82,17 @@
 }
 
 .rightpane {
-    display: flex;
-    flex-direction: column;
-    overflow-x: scroll;
+    background-color: white;
+}
+
+.wrap * {
+    display: grid;
+    gap: 1rem;
 }
 
 .rightpane input,
 .rightpane textarea {
+    display: inline-block;
     border-radius: 0.5rem;
     font-family: "Roboto Slab";
     background-color: rgb(226, 255, 245);
@@ -101,45 +106,57 @@
 
 .rightpane input,
 .rightpane textarea {
+    display: inline-block;
     outline-width: 0;
 }
 
-.rightpane table {
-    width: 80%;
-    padding: 1rem;
-    margin: auto;
-}
-
 .rightpane .bio {
+    display: inline-block;
     font-size: small;
     text-align: justify;
-    margin-bottom: auto;
-    margin-bottom: auto;
     position: relative;
-    vertical-align: top;
 }
 
 .rightpane .biohead {
-    margin-bottom: 100%;
-    vertical-align: top;
+    display: inline-block;
 }
 
 .rightpane textarea {
+    display: inline-block;
     height: 6rem;
-    width: 80%;
     resize: none;
     background-color: rgb(212, 248, 236);
     padding: 0.3rem;
     font-family: "Roboto Slab";
 }
 
-.rightpane td {
-    padding: 1rem;
-    position: relative;
-}
-
-.rightpane td,
-input {
+.rightpane input,
+.rightpane textarea {
     margin: 0;
     padding-top: 0;
+    width: 80%;
+}
+
+.rightpane * {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.rightpane .bio {
+    padding-right: 1rem;
+}
+
+.rightpane form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    padding: 1rem;
+}
+
+.btn {
+    width: 4rem;
+    padding: 0;
+    margin: 0;
+    max-height: 3rem;
 }
