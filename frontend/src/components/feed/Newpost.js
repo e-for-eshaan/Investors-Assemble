@@ -57,7 +57,11 @@ const Newpost = (props) => {
       </div>
       <div className={classes.text}>
         {props.img !== "" && (
-          <img src={props.img} alt="404_post_img" className={classes.image} />
+          <img
+            src={`http://localhost:5000/images/${props.img}`}
+            alt="404_post_img"
+            className={classes.image}
+          />
         )}
         {props.desc}
       </div>
