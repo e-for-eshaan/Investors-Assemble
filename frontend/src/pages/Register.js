@@ -52,13 +52,14 @@ const pageTransition = {
   },
   out:{
     opacity:0,
-    x:"-100%"
+    x:"100vw"
   }
 }
   return (
     <motion.div className = {classes.wrapper}
     initial="out"
-    animate="in"
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      animate="in"
     exit="out"
     variants={pageTransition}>
       <Navbar pos='relative'/>

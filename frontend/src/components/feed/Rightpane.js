@@ -4,7 +4,7 @@ import Card from "./Card";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Rightpane = () => {
+const Rightpane = (props) => {
   const [news, setnews] = useState(null);
   const fetcher = async () => {
     await axios
@@ -23,18 +23,13 @@ const Rightpane = () => {
   }, []);
 
   return (
-    <div className={classes.rightpane}>
-
-
-
-      
+    <div className={props.rightpane==true ? classes.rightpane : classes.overlay}>
       <div className={classes.scroll}>
         <h3 className={classes.head}>News</h3>
         {news != null ? (
           news
             .filter((item) => {
-              if (item.image) 
-              return item;
+              if (item.image) return item;
             })
             .map((item) => (
               <a href={item.url} target="_blank">
@@ -43,19 +38,10 @@ const Rightpane = () => {
               </a>
             ))
         ) : (
-          <div className = {classes.loader}></div>
+          <div className={classes.loader}></div>
         )}
       </div>
       <br />
-      <div className={classes.scroll2}>
-        <h3 className={classes.head}>Trending</h3>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
     </div>
   );
 };

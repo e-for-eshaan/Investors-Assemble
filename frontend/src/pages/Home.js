@@ -11,11 +11,8 @@ const Home = () => {
     <>
       <Navbar />
       <Homepage1 />
-      <hr />
       <Homepage2 />
-      <hr />
       <Homepage3 />
-      <hr />
       <Homepage4 />
       <Footer />
     </>

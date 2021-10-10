@@ -12,18 +12,19 @@ import {
 import OtherUserProfile from "./pages/OtherUserProfile";
 import Editprofile from "./components/profile/Editprofile";
 import Profile from "./components/profile/Profile";
-import { useContext } from "react";
+import { useContext, useLocation } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   // const [user, setUser] = useState({});
   const { user } = useContext(AuthContext);
+  const location = useLocation;
   return (
     <Router>
       <div className="App">
-        <AnimatePresence>
-          <Switch>
+        <AnimatePresence exitBeforeEnter >
+          <Switch location={location} >
             <Route path="/" exact>
               {user ? <Redirect to="/feed" /> : <Home />}
             </Route>

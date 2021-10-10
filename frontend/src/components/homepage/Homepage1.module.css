@@ -5,17 +5,32 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 2rem;
+    color: white;
+}
+
+.bg1 {
+    position: absolute;
+    width: 50%;
+    left: 0;
+    bottom: 9rem;
+    transform: scaleX(-100%);
+}
+
+.wrap p {
+    font-size: 1.5rem;
+}
+
+.bg2 {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    bottom: 9rem;
 }
 
 .head {
     font-family: 'sacramento', cursive;
     font-size: 5rem;
     margin-bottom: 0;
-}
-
-.container img {
-    width: 20rem;
-    display: inline-block;
 }
 
 .wrap {

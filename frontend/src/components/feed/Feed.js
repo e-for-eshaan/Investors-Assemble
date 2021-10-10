@@ -24,13 +24,15 @@ const Feed = (props) => {
     },
     out: {
       opacity: 0,
-      x: "-100%",
+      x: "100vw",
     },
   };
+  
   return (
     <motion.div
       className={classes.wrapper}
       initial="out"
+      transition={{ ease: "easeOut", duration: 0.5 }}
       animate="in"
       exit="out"
       variants={pageTransition}
@@ -53,16 +55,38 @@ const Feed = (props) => {
           }}
           width="50%"
         >
-          <Rightpane />
+          <Rightpane overlay={true}/>
         </SlidingPane>
 
         <SlidingPane
           isOpen={state.isPaneOpenLeft}
-          title="Hey, it is optional pane title.  I can be React component too."
+          title="Menu"
           from="left"
           onRequestClose={() => setState({ isPaneOpenLeft: false })}
           width="11rem"
-          from="left"
+          overlayClassName={{
+            overlay: {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(255, 255, 255, 0.75)'
+            },
+            content: {
+              position: 'absolute',
+              top: '40px',
+              left: '40px',
+              right: '40px',
+              bottom: '40px',
+              border: '1px solid #ccc',
+              background: '#fff',
+              overflow: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              borderRadius: '4px',
+              outline: 'none',
+            }
+          }}
         >
           <ul className={classes.overlay}>
             {user && (
@@ -91,7 +115,7 @@ const Feed = (props) => {
         <Allposts user={user} />
 
         <div className={classes.flexrightpane}>
-          <Rightpane />
+          <Rightpane rightpane={true}/>
         </div>
       </div>
     </motion.div>

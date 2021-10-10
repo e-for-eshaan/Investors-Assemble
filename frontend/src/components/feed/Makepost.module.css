@@ -28,6 +28,11 @@
     width: 100%;
     margin: 0 1rem 0 1rem;
     outline: none;
+    background: rgba( 255, 255, 255, 0.25);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .btn {
