@@ -2,7 +2,6 @@ import classes from "./Rightpane.module.css";
 import React from "react";
 import Card from "./Card";
 import axios from "axios";
-import load from "../images/loading.gif";
 import { useState, useEffect } from "react";
 
 const Rightpane = () => {
@@ -38,7 +37,7 @@ const Rightpane = () => {
               return item;
             })
             .map((item) => (
-              <a href={item.url}>
+              <a href={item.url} target="_blank">
                 {" "}
                 <Card image={item.image} text={item.title} />{" "}
               </a>
@@ -48,7 +47,7 @@ const Rightpane = () => {
         )}
       </div>
       <br />
-      <div className={classes.scroll}>
+      <div className={classes.scroll2}>
         <h3 className={classes.head}>Trending</h3>
         <Card />
         <Card />

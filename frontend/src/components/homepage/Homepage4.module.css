@@ -2,5 +2,9 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(min-content, max-content);
-    margin-top: 5rem;
+    color: white;
+}
+
+.wrap {
+    height: 100vh;
 }

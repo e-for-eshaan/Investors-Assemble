@@ -1,16 +1,17 @@
 .wrapper {
     margin: auto;
     display: flex;
-    background-color: rgb(181, 247, 209);
     flex-direction: column;
     padding: 1.5rem;
     border-radius: 1.2rem;
     text-align: center;
     max-width: 15rem;
-    box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
-    -webkit-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
-    -moz-box-shadow: -3px 4px 15px -2px rgba(117, 117, 117, 0.54);
-    margin-bottom: 2rem;
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .wrapper h2,

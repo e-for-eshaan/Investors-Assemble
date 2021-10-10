@@ -15,16 +15,7 @@ const Homepage1 = () => {
     <div className={classes.container}>
       <div className={classes.wrap}>
         <h1 className={classes.head}>Investors Assemble</h1>
-        <div className={classes.scroll}>
-          <img src={img1} alt="" />
-          <img src={img2} alt="" />
-          <img src={img3} alt="" />
-          <img src={img4} alt="" />
-          <img src={img5} alt="" />
-          <img src={img6} alt="" />
-          <img src={img7} alt="" />
-          <img src={img8} alt="" />
-        </div>
+       
       </div>
       <Login />
     </div>

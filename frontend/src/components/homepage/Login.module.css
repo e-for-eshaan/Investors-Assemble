@@ -1,7 +1,12 @@
 .login {
     width: 35%;
     height: 100vh;
-    background-color: #d2ffe1;
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
     display: flex;
     margin: 0;
     border-bottom-left-radius: 1.2rem;
@@ -32,7 +37,6 @@
 
 .login:hover {
     transition: 1s ease-in;
-    background-color: #ade9c1;
     color: black;
     left: 0;
     position: unset;

@@ -8,6 +8,7 @@ import img3 from "../images/shake.gif"
 import img4 from "../images/recruit.gif"
 
 
+
 const Homepage2 = () => {
   return (
     <div className={classes.container}>
@@ -24,6 +25,7 @@ const Homepage2 = () => {
         <Fade triggerOnce={true} delay={400}>
         <Card imgsrc={img3} text="" head=""/>
         </Fade>
+        <div className = {classes.temp}></div>
         <Fade triggerOnce={true} delay={600}>
         <Card imgsrc={img4} text="" head=""/>
         </Fade>

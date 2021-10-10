@@ -2,7 +2,7 @@ import classes from "./Allposts.module.css";
 import React, { useEffect, useState } from "react";
 import Newpost from "./Newpost";
 import Makepost from "./Makepost";
-
+import { Fade } from "react-awesome-reveal";
 import { format } from "timeago.js";
 import axios from "axios";
 
@@ -33,15 +33,17 @@ const Allposts = (props) => {
       {posts.length === 0 ? <h4>No Posts😿</h4> : <h4>All Posts🚀</h4>}
       {posts.length > 0 &&
         posts.map((post) => (
-          <Newpost
-            postId={post._id}
-            loggedUser={user}
-            key={post._id}
-            userId={post.userId}
-            time={format(post.createdAt)}
-            desc={post.desc}
-            img={post.img}
-          />
+          <Fade delay={2}>
+            <Newpost
+              postId={post._id}
+              loggedUser={user}
+              key={post._id}
+              userId={post.userId}
+              time={format(post.createdAt)}
+              desc={post.desc}
+              img={post.img}
+            />
+          </Fade>
         ))}
     </div>
   );

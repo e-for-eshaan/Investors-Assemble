@@ -1,6 +1,6 @@
 .nav {
     font-family: 'Roboto Slab';
-    background-color: #AEF5C6;
+    background-color: #a56dca;
     color: white;
     margin: 0;
     display: flex;
@@ -48,11 +48,11 @@
     padding: 0.3rem;
     padding-bottom: 0;
     margin: 0;
-    background-color: #d1ffe0;
+    background-color: #f5d4ff;
     font-family: "Sacramento", cursive;
     font-size: 2rem;
     font-weight: 600;
-    color: cadetblue;
+    color: rgb(120, 150, 189);
     text-decoration: none;
 }
 

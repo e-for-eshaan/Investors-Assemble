@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../homepage/Navbar";
 import dp from "../images/profile.png";
 import Newpost from "../feed/Newpost";
-import Footer from "../homepage/Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { format } from "timeago.js";
 import SlidingPane from "react-sliding-pane";
-
+import { Fade } from "react-awesome-reveal";
 const Profile = (props) => {
   const [userPosts, setUserPosts] = useState([]);
 
@@ -60,15 +59,17 @@ const Profile = (props) => {
           <h1>MY POSTS</h1>
           {userPosts.length > 0
             ? userPosts.map((post) => (
-                <Newpost
-                  postId={post._id}
-                  loggedUser={user}
-                  key={post._id}
-                  userId={post.userId}
-                  time={format(post.createdAt)}
-                  desc={post.desc}
-                  img={post.img}
-                />
+                <Fade delay={2}>
+                  <Newpost
+                    postId={post._id}
+                    loggedUser={user}
+                    key={post._id}
+                    userId={post.userId}
+                    time={format(post.createdAt)}
+                    desc={post.desc}
+                    img={post.img}
+                  />
+                </Fade>
               ))
             : "NO POSTS AVAILABLE"}
           <SlidingPane

@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 import axios from "axios";
 import investor from "../components/images/investor.jpg"
 import startup from "../components/images/startup.jpg"
+import { motion } from "framer-motion";
 const Home = () => {
   const name = useRef();
   const email = useRef();
@@ -44,9 +45,22 @@ const Home = () => {
       }
     }
   };
-
+const pageTransition = {
+  in:{
+    opacity:1,
+    x:0
+  },
+  out:{
+    opacity:0,
+    x:"-100%"
+  }
+}
   return (
-    <div className = {classes.wrapper}>
+    <motion.div className = {classes.wrapper}
+    initial="out"
+    animate="in"
+    exit="out"
+    variants={pageTransition}>
       <Navbar pos='relative'/>
       <div className = {classes.container}>
         <form className = {classes.form}
@@ -113,7 +127,7 @@ const Home = () => {
         </form>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

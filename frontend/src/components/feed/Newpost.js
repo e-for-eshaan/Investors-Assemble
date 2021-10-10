@@ -46,13 +46,20 @@ const Newpost = (props) => {
           alt="404_user_img"
         />
         {loggedUser._id === user._id ? (
-          <Link to="/user/profile">
-            <h2>{user.name}</h2>
-          </Link>
+          <h2>
+            <Link style={{ textDecoration: "none" ,color:'white'}} to="/user/profile">
+              {user.name}
+            </Link>
+          </h2>
         ) : (
-          <Link to={`/user/otherprofile/${user._id}`}>
-            <h2>{user.name}</h2>
-          </Link>
+          <h2>
+            <Link
+              style={{ textDecoration: "none" ,color:'white' }}
+              to={`/user/otherprofile/${user._id}`}
+            >
+              {user.name}
+            </Link>
+          </h2>
         )}
         {/* <h2>{user.name}</h2> */}
         <div className={classes.time}>

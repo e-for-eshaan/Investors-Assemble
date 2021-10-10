@@ -7,10 +7,13 @@
 }
 
 .container {
+    margin-top: 3rem;
+    color: white;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .container p {
     margin: 0;
+    margin-bottom: 3rem;
 }
