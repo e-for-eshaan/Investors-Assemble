@@ -9,6 +9,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import OtherUserProfile from "./pages/OtherUserProfile";
 import Editprofile from "./components/profile/Editprofile";
 import Profile from "./components/profile/Profile";
 import { useContext } from "react";
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/user/editprofile">
             {user ? <Editprofile user={user} /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/user/otherprofile/:id">
+            <OtherUserProfile user={user} />
           </Route>
         </Switch>
       </div>

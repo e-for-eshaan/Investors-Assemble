@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import dp from "../images/profile.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
-const Newpost = (props) => {
+const OtherUserPosts = (props) => {
   const { loggedUser } = props;
   // state for storing user details of each post
   const [user, setUser] = useState({});
@@ -23,19 +22,6 @@ const Newpost = (props) => {
       mounted = false;
     };
   }, [props.userId]);
-
-  const handleDeletePost = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.delete(`/api/posts/${props.postId}`, {
-        data: {
-          userId: props.userId,
-        },
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   //   console.log(user);
   return (
@@ -68,23 +54,18 @@ const Newpost = (props) => {
           />
         )}
         {props.desc}
-        {loggedUser._id === user._id && (
-          <i className={classes.delete} onClick={handleDeletePost}>
-            <DeleteOutlineOutlinedIcon />
-          </i>
-        )}
       </div>
     </div>
   );
 };
 
-Newpost.defaultProps = {
+OtherUserPosts.defaultProps = {
   name: "Default Name",
   text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores modi aliquid possimus explicabo atque illum ullam nisi maiores voluptas, similique illo, natus ratione veritatis enim voluptatum adipisci quisquam ea temporibus numquam rem id necessitatibus quasi nulla. Hic praesentium ipsum perferendis, numquam veritatis sit, maiores fuga repellendus tempora accusantium saepe ab.",
   date: "24th July, 2019",
   time: "7:30pm",
   image: "https://picsum.photos/536/354",
-  dp: dp,
+  dp,
 };
 
-export default Newpost;
+export default OtherUserPosts;
