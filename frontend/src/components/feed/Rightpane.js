@@ -25,6 +25,10 @@ const Rightpane = () => {
 
   return (
     <div className={classes.rightpane}>
+
+
+
+      
       <div className={classes.scroll}>
         <h3 className={classes.head}>News</h3>
         {news != null ? (
@@ -40,7 +44,7 @@ const Rightpane = () => {
               </a>
             ))
         ) : (
-          <Card image={load} text="" />
+          <div className = {classes.loader}></div>
         )}
       </div>
       <br />

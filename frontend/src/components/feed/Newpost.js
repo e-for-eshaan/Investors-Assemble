@@ -48,11 +48,7 @@ const Newpost = (props) => {
         <h2>{user.name}</h2>
         <div className={classes.time}>
           <h6>{props.time}</h6>
-          {loggedUser._id === user._id && (
-            <i style={{ cursor: "pointer" }} onClick={handleDeletePost}>
-              <DeleteOutlineOutlinedIcon />
-            </i>
-          )}
+         
         </div>
       </div>
       <div className={classes.text}>
@@ -64,6 +60,11 @@ const Newpost = (props) => {
           />
         )}
         {props.desc}
+        {loggedUser._id === user._id && (
+            <i className = {classes.delete} onClick={handleDeletePost}>
+              <DeleteOutlineOutlinedIcon />
+            </i>
+          )}
       </div>
     </div>
   );

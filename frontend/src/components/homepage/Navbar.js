@@ -2,7 +2,7 @@ import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-
+import MenuIcon from '@mui/icons-material/Menu';
 const Navbar = (props) => {
   const { user } = useContext(AuthContext);
 
@@ -42,6 +42,9 @@ const Navbar = (props) => {
             <li className={classes.listitem}>Register</li>
           </Link>
         )}
+        {          
+            <li className={classes.menu} onClick={props.clicker}><MenuIcon/></li>
+        }
       </ul>
     </nav>
   );
