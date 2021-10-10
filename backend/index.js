@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors");
 //file imports
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
@@ -14,7 +15,7 @@ const app = express();
 
 //middlewares
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-
+app.use(cors());
 dotenv.config();
 app.use(express.json());
 

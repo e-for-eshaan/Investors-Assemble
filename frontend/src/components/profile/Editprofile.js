@@ -1,55 +1,107 @@
 import classes from "./Editprofile.module.css";
 import Navbar from "../homepage/Navbar";
-import React from "react";
+import React, { useRef } from "react";
 import dp from "../images/profile.png";
+import { format } from "timeago.js";
+
+import axios from "axios";
 
 const Editprofile = (props) => {
+  const name = useRef();
+  const email = useRef();
+  // const password = useRef();
+  // const confirmpassword = useRef();
+  const location = useRef();
+  const contactNo = useRef();
+  const bio = useRef();
+
+  const { user } = props;
+  const handleEditProfileSubmit = async (e) => {
+    e.preventDefault();
+    // if (confirmpassword.current.value !== password.current.value) {
+    //   confirmpassword.current.setCustomValidity("passwords do not match!");
+    // } else {
+    let editedUser = {
+      name: !name.current.value ? user.name : name.current.value,
+      email: !email.current.value ? user.email : email.current.value,
+      contactNo: !contactNo.current.value
+        ? user.contactNo
+        : contactNo.current.value,
+      location: !location.current.value
+        ? user.location
+        : location.current.value,
+      bio: !bio.current.value ? user.bio : bio.current.value,
+      userId: user._id,
+    };
+    // if (password.current.value) {
+    //   editedUser = { ...editedUser, password: password.current.value };
+    // }
+    // updating the user details using API
+    try {
+      await axios.put(
+        `http://localhost:5000/api/users/${user._id}`,
+        editedUser
+      );
+      // pushing the user to the profile page after successful registering
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+      // }
+    }
+  };
   return (
     <div className={classes.wrapper}>
       <Navbar pos="relative" round="0" />
       <div className={classes.container}>
         <div className={classes.leftpane}>
-          <img src={props.image} alt="" />
-          <h2>{props.name}</h2>
-          <h3> {props.accounttype}</h3>
-          <p className={classes.bio}>{props.bio}</p>
-          <h3 className={classes.date}> Joined: {props.date}</h3>
+          <img
+            src={user.avatar === "" ? props.image : user.avatar}
+            alt="404_user_img"
+          />
+          <h2>{user.name}</h2>
+          <h3> {user.isInvestor === 0 ? "Startup" : "Investor"}</h3>
+          <p className={classes.bio}>{user.bio}</p>
+          <h3 className={classes.date}> Joined: {format(user.createdAt)}</h3>
         </div>
 
         <div className={classes.rightpane}>
-          <form>
-            
-              <h3> Name</h3> <p> {props.name} </p>
-              <input type="text" placeholder="Enter new name" />
-            
-              <h3> Email</h3>
-              <p> {props.email} </p>
-              <input type="text" placeholder="Enter new E-mail" />
-            
-              <h3> Number</h3> 
-              <p> {props.number} </p>
-              <input type="text" placeholder="Change Number" />
-            
-              <h3> City</h3>
-              <p> {props.city} </p>
-              <input type="text" placeholder="Change City" /> 
-            
-            <h3> Password</h3>
+          <form onSubmit={handleEditProfileSubmit}>
+            <h3> Name</h3> <p> {user.name} </p>
+            <input type="text" ref={name} placeholder="Enter new name" />
+            <h3> Email</h3>
+            <p> {user.email} </p>
+            <input type="email" ref={email} placeholder="Enter new E-mail" />
+            <h3> Number</h3>
+            <p> {user.contactNo} </p>
+            <input
+              type="text"
+              ref={contactNo}
+              max="10"
+              maxLength="10"
+              placeholder="Change Number"
+            />
+            <h3> City</h3>
+            <p> {user.location} </p>
+            <input type="text" ref={location} placeholder="Change City" />
+            {/* <h3> Password</h3>
             <div></div>
-              <input type="text" placeholder="Enter new password" />
-            
-              <h3 className={classes.biohead}> Bio</h3>
-              <p className={classes.bio}> {props.bio} </p>
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Max 50 words"
-              ></textarea>
-              <div></div>
-              <div></div>
-              <button type="submit" className = {classes.btn}>Save Changes</button>
+              <input type="text" placeholder="Enter new password" /> */}
+            <h3 className={classes.biohead}> Bio</h3>
+            <p className={classes.bio}> {user.bio} </p>
+            <textarea
+              name=""
+              ref={bio}
+              id=""
+              cols="30"
+              maxLength="100"
+              rows="10"
+              placeholder="Max 100 words"
+            ></textarea>
+            <div></div>
+            <div></div>
+            <button type="submit" className={classes.btn}>
+              Save Changes
+            </button>
           </form>
         </div>
       </div>
