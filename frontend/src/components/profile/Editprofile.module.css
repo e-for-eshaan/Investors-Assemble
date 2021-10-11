@@ -1,162 +1,198 @@
-.wrapper {
-    max-width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper {
-    max-width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-}
-
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.leftpane {
-    min-width: 10rem;
-    width: 30%;
-    height: 100%;
-    background-color: rgb(155, 223, 191);
-    padding: 1rem;
-    overflow-y: scroll;
-}
-
-.rightpane {
-    display: inline-block;
-    background-color: rgb(206, 245, 221);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.leftpane img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-.leftpane img {
-    width: 80%;
-    border-radius: 0.5rem;
-}
-
-.leftpane h2 {
-    color: black;
-    background-color: rgb(198, 235, 212);
-    padding: 0.2rem;
-    border-radius: 0.3rem;
-}
-
-.leftpane h3 {
-    color: black;
-    background-color: rgb(198, 235, 212);
-    padding: 0.2rem;
-    border-radius: 0.3rem;
-}
-
-.leftpane h3 {
-    color: black;
-    padding: 0.2rem;
-    border-radius: 0.3rem;
-}
-
-.leftpane .bio {
-    color: black;
-    background-color: rgb(198, 235, 212);
-    padding: 0.2rem;
-    border-radius: 0.3rem;
-    text-align: left;
-    hyphens: auto;
-}
-
-.date {
-    align-self: flex-end;
-    font-weight: lighter;
-}
-
-.rightpane {
-    background-color: white;
-}
-
-.wrap * {
-    display: grid;
-    gap: 1rem;
-}
-
-.rightpane input,
-.rightpane textarea {
-    display: inline-block;
-    border-radius: 0.5rem;
-    font-family: "Roboto Slab";
-    background-color: rgb(226, 255, 245);
-    text-decoration: none;
-    height: 1.2rem;
-    margin-top: 0;
-    padding: 0.3rem;
-    margin: 1rem;
-    border: 0.2rem solid rgb(114, 158, 136);
-}
-
-.rightpane input,
-.rightpane textarea {
-    display: inline-block;
-    outline-width: 0;
-}
-
-.rightpane .bio {
-    display: inline-block;
-    font-size: small;
-    text-align: justify;
-    position: relative;
-}
-
-.rightpane .biohead {
-    display: inline-block;
-}
-
-.rightpane textarea {
-    display: inline-block;
-    height: 6rem;
-    resize: none;
-    background-color: rgb(212, 248, 236);
-    padding: 0.3rem;
-    font-family: "Roboto Slab";
-}
-
-.rightpane input,
-.rightpane textarea {
-    margin: 0;
-    padding-top: 0;
-    width: 80%;
-}
-
-.rightpane * {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}
-
-.rightpane .bio {
-    padding-right: 1rem;
-}
-
-.rightpane form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100%;
-    padding: 1rem;
-}
-
-.btn {
-    width: 4rem;
-    padding: 0;
-    margin: 0;
-    max-height: 3rem;
-}
+    .wrapper {
+        max-width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .wrapper {
+        max-width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+    }
+    
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    
+    .overlay {
+        height: calc(100% - 1rem);
+        text-align: center;
+        background-color: #3527ac;
+        background-image: linear-gradient( 67deg, #3527ac 0%, #b22fc1 46%, #ffda94 100%);
+        padding: 0;
+        z-index: -99999;
+        padding: 1rem;
+    }
+    
+    .leftpane {
+        min-width: 10rem;
+        width: 30%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 1rem;
+        overflow-y: scroll;
+        color: white;
+    }
+    
+    .rightpane {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .leftpane img,
+    .overlay .img {
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+    
+    .leftpane img,
+    .overlay img {
+        width: 50%;
+        border-radius: 0.5rem;
+    }
+    
+    .leftpane h2 {
+        padding: 0.2rem;
+        border-radius: 0.3rem;
+    }
+    
+    .leftpane .bio {
+        padding: 0.2rem;
+        border-radius: 0.3rem;
+        text-align: left;
+        hyphens: auto;
+    }
+    
+    .date {
+        align-self: flex-end;
+        font-weight: lighter;
+    }
+    
+    .rightpane {
+        background-color: transparent;
+    }
+    
+    .rightpane input,
+    .rightpane textarea {
+        display: inline-block;
+        border-radius: 0.5rem;
+        font-family: "Roboto Slab";
+        text-decoration: none;
+        height: 1.2rem;
+        margin-top: 0;
+        padding: 0.3rem;
+    }
+    
+    .rightpane input,
+    .rightpane textarea {
+        display: inline-block;
+        outline-width: 0;
+        background: rgba( 255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+        backdrop-filter: blur( 4px);
+        -webkit-backdrop-filter: blur( 4px);
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18);
+    }
+    
+    .rightpane .bio {
+        display: inline-block;
+        font-size: small;
+        text-align: justify;
+        position: relative;
+    }
+    
+    .rightpane .biohead {
+        display: inline-block;
+    }
+    
+    .rightpane textarea {
+        display: inline-block;
+        height: 6rem;
+        resize: none;
+        padding: 0.3rem;
+        font-family: "Roboto Slab";
+    }
+    
+    .rightpane input,
+    .rightpane textarea {
+        margin: 0;
+        padding-top: 0;
+        width: 80%;
+    }
+    
+    .rightpane * {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .rightpane .bio {
+        padding-right: 1rem;
+    }
+    
+    .rightpane form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+        padding: 1rem;
+    }
+    
+    .btn {
+        width: 4rem;
+        padding: 0;
+        margin: 0;
+        max-height: 3rem;
+        background: rgba( 255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+        backdrop-filter: blur( 4px);
+        -webkit-backdrop-filter: blur( 4px);
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18);
+    }
+    
+    .leftpane * {
+        background: rgba( 255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+        backdrop-filter: blur( 4px);
+        -webkit-backdrop-filter: blur( 4px);
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18);
+        color: black;
+    }
+    
+    .rightpane {
+        margin: 0;
+        padding: 0;
+        padding: 3rem;
+        height: 80%;
+        overflow-y: scroll;
+    }
+    
+    @media only screen and (max-width: 906px) {
+        .leftpane {
+            display: none;
+        }
+    }
+    
+    @media only screen and (max-width: 500px) {
+        .leftpane {
+            display: none;
+        }
+        .rightpane {
+            padding: 1rem;
+        }
+    }

@@ -1,10 +1,13 @@
 import classes from "./Editprofile.module.css";
 import Navbar from "../homepage/Navbar";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import dp from "../images/profile.png";
 import { format } from "timeago.js";
-
+import { motion } from "framer-motion";
+import SlidingPane from "react-sliding-pane";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import Leftpane from "../feed/Leftpane";
 
 const Editprofile = (props) => {
   const name = useRef();
@@ -49,9 +52,37 @@ const Editprofile = (props) => {
       // }
     }
   };
+
+  const [state, setState] = useState({
+    isPaneOpen: false,
+    isPaneOpenLeft: false,
+  });
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opacity: 0,
+      x: "100vw",
+    },
+  };
+
   return (
-    <div className={classes.wrapper}>
-      <Navbar pos="relative" round="0" />
+    <motion.div
+      className={classes.wrapper}
+      initial="out"
+      transition={{ ease: "easeOut", duration: 1 }}
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+    >
+      <Navbar
+        pos="unset"
+        round="0"
+        clicker={() => setState({ isPaneOpenLeft: true })}
+      />
+
       <div className={classes.container}>
         <div className={classes.leftpane}>
           <img
@@ -64,15 +95,32 @@ const Editprofile = (props) => {
           <h3 className={classes.date}> Joined: {format(user.createdAt)}</h3>
         </div>
 
+        <SlidingPane
+          isOpen={state.isPaneOpenLeft}
+          title="Menu"
+          from="left"
+          onRequestClose={() => setState({ isPaneOpenLeft: false })}
+          width="90%"
+        >
+          <div className = {classes.overlay}>
+            <img
+              src={user.avatar === "" ? props.image : user.avatar}
+              alt="404_user_img"
+            />
+            <h2>{user.name}</h2>
+            <h3> {user.isInvestor === 0 ? "Startup" : "Investor"}</h3>
+            <p className={classes.bio}>{user.bio}</p>
+            <h3 className={classes.date}> Joined: {format(user.createdAt)}</h3>
+          </div>
+        </SlidingPane>
+
         <div className={classes.rightpane}>
           <form onSubmit={handleEditProfileSubmit}>
-            <h3> Name</h3> <p> {user.name} </p>
+            <h3> Name</h3>
             <input type="text" ref={name} placeholder="Enter new name" />
             <h3> Email</h3>
-            <p> {user.email} </p>
             <input type="email" ref={email} placeholder="Enter new E-mail" />
             <h3> Number</h3>
-            <p> {user.contactNo} </p>
             <input
               type="text"
               ref={contactNo}
@@ -81,13 +129,11 @@ const Editprofile = (props) => {
               placeholder="Change Number"
             />
             <h3> City</h3>
-            <p> {user.location} </p>
             <input type="text" ref={location} placeholder="Change City" />
             {/* <h3> Password</h3>
             <div></div>
               <input type="text" placeholder="Enter new password" /> */}
             <h3 className={classes.biohead}> Bio</h3>
-            <p className={classes.bio}> {user.bio} </p>
             <textarea
               name=""
               ref={bio}
@@ -98,14 +144,13 @@ const Editprofile = (props) => {
               placeholder="Max 100 words"
             ></textarea>
             <div></div>
-            <div></div>
             <button type="submit" className={classes.btn}>
               Save Changes
             </button>
           </form>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -32,7 +32,7 @@ const Feed = (props) => {
     <motion.div
       className={classes.wrapper}
       initial="out"
-      transition={{ ease: "easeOut", duration: 0.5 }}
+      transition={{ ease: "easeOut", duration: 1 }}
       animate="in"
       exit="out"
       variants={pageTransition}

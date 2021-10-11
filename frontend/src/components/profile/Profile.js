@@ -8,6 +8,7 @@ import axios from "axios";
 import { format } from "timeago.js";
 import SlidingPane from "react-sliding-pane";
 import { Fade } from "react-awesome-reveal";
+import { motion } from "framer-motion";
 const Profile = (props) => {
   const [userPosts, setUserPosts] = useState([]);
 
@@ -32,8 +33,27 @@ const Profile = (props) => {
     isPaneOpenLeft: false,
   });
 
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opacity: 0,
+      x: "100vw",
+    },
+  };
+
+
   return (
-    <div className={classes.wrapper}>
+    <motion.div
+      className={classes.wrapper}
+      initial="out"
+      transition={{ ease: "easeOut", duration: 1 }}
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+    >
       <Navbar
         pos="relative"
         round="0"
@@ -99,7 +119,7 @@ const Profile = (props) => {
           </SlidingPane>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
