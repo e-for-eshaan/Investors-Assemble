@@ -15,7 +15,7 @@ const Editprofile = (props) => {
   const location = useRef();
   const contactNo = useRef();
   const bio = useRef();
-
+  const [saved, setSaved] = useState(false);
   const { user } = props;
   const handleEditProfileSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +44,8 @@ const Editprofile = (props) => {
         editedUser
       );
       // pushing the user to the profile page after successful registering
-      window.location.reload();
+      // window.location.reload();
+      setSaved(true);
     } catch (err) {
       console.log(err);
       // }
@@ -147,8 +148,14 @@ const Editprofile = (props) => {
               placeholder="Max 100 words"
             ></textarea>
             <div></div>
-            <button type="submit" className={classes.btn}>
-              Save Changes
+            <button
+              type="submit"
+              style={
+                saved ? { backgroundColor: "green", opacity: "0.7" } : null
+              }
+              className={classes.btn}
+            >
+              {saved ? "Saved :)" : "Save Changes"}
             </button>
           </form>
         </div>

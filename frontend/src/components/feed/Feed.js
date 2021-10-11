@@ -80,7 +80,10 @@ const Feed = (props) => {
               </Link>
             )}
             <li className={classes.listitem}>
-              <button className = {classes.btn} onClick={() => setState({ isPaneOpen: true })}>
+              <button
+                className={classes.btn}
+                onClick={() => setState({ isPaneOpen: true })}
+              >
                 News
               </button>
             </li>

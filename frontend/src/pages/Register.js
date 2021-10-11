@@ -134,7 +134,7 @@ const Home = () => {
             <img
               onClick={() => {
                 settype("Investor");
-                console.log(type);
+                // console.log(type);
               }}
               src={investor}
               alt=""
@@ -143,7 +143,7 @@ const Home = () => {
             <img
               onClick={() => {
                 settype("Startup");
-                console.log(type);
+                // console.log(type);
               }}
               src={startup}
               alt=""

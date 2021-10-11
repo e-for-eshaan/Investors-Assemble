@@ -47,7 +47,11 @@ const Newpost = (props) => {
     >
       <div className={classes.head}>
         <img
-          src={user.avatar === "" ? props.dp : `http://localhost:5000/images/${user.avatar}`}
+          src={
+            user.avatar === ""
+              ? props.dp
+              : `http://localhost:5000/images/${user.avatar}`
+          }
           alt="404_user_img"
         />
         {loggedUser._id === user._id ? (

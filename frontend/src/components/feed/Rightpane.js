@@ -12,10 +12,10 @@ const Rightpane = (props) => {
         "http://api.mediastack.com/v1/news?access_key=5d1ccd3b48f4399e0e6996211f0ed57b&categories=business&languages=en"
       )
       .then((response) => {
-        console.log(response.data.data);
+        // console.log(response.data.data);
         setnews(response.data.data);
       })
-      .catch((e) => console.log("api failed"));
+      .catch((e) => console.log("api failed", e));
   };
 
   useEffect(() => {

@@ -31,7 +31,7 @@ const Makepost = () => {
     }
     try {
       await axios.post("/api/posts/create", newPost);
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.log(err);
     }
