@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
     try {
-      const user = await User.findByIdAndDelete(req.params.id);
+      const userFound = await User.findByIdAndDelete(req.params.id);
       res.status(200).json("Account has been deleted!");
     } catch (err) {
       return res.status(500).json(err);

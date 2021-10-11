@@ -17,8 +17,10 @@ import { AuthContext } from "./context/AuthContext";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-  // const [user, setUser] = useState({});
+  // const [user, setUser] = useState({})
+
   const { user } = useContext(AuthContext);
+
   const location = useLocation;
   return (
     <Router>
