@@ -32,14 +32,19 @@ const Newpost = (props) => {
           userId: props.userId,
         },
       });
+      setvisible(false);
     } catch (err) {
       console.log(err);
     }
   };
+  const [visible, setvisible] = useState(true);
 
   //   console.log(user);
   return (
-    <div className={classes.newpost}>
+    <div
+      className={classes.newpost}
+      style={visible ? null : { display: "none" }}
+    >
       <div className={classes.head}>
         <img
           src={user.avatar === "" ? props.dp : user.avatar}
@@ -47,14 +52,17 @@ const Newpost = (props) => {
         />
         {loggedUser._id === user._id ? (
           <h2>
-            <Link style={{ textDecoration: "none" ,color:'white'}} to="/user/profile">
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/user/profile"
+            >
               {user.name}
             </Link>
           </h2>
         ) : (
           <h2>
             <Link
-              style={{ textDecoration: "none" ,color:'white' }}
+              style={{ textDecoration: "none", color: "white" }}
               to={`/user/otherprofile/${user._id}`}
             >
               {user.name}

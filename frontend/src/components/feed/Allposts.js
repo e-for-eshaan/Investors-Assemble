@@ -27,6 +27,7 @@ const Allposts = (props) => {
     };
   }, []);
 
+
   return (
     <div className={classes.allposts}>
       <Makepost />
