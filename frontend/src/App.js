@@ -14,7 +14,7 @@ import Editprofile from "./components/profile/Editprofile";
 import Profile from "./components/profile/Profile";
 import { useContext, useLocation } from "react";
 import { AuthContext } from "./context/AuthContext";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   // const [user, setUser] = useState({});
@@ -23,8 +23,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <AnimatePresence exitBeforeEnter >
-          <Switch location={location} >
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location}>
             <Route path="/" exact>
               {user ? <Redirect to="/feed" /> : <Home />}
             </Route>

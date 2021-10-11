@@ -7,7 +7,7 @@ import bg2 from "../images/present3.svg";
 import dp1 from "../images/dp1.jpg";
 import dp2 from "../images/dp2.jpg";
 import dp3 from "../images/dp4.jpg";
-import Tilt from "react-tilt";
+// import Tilt from "react-tilt";
 
 const Homepage3 = () => {
   return (
@@ -24,13 +24,13 @@ const Homepage3 = () => {
           options={{ max: 25 }}
           style={{ height: 250, width: 250 }}
         > */}
-          <Fade triggerOnce={true} direction="left">
-            <Reviews
-              dp={dp1}
-              name="Esky"
-              comment="Works Excellently for me, effortless reach and netwroking. Big help, great asset!"
-            />
-          </Fade>
+        <Fade triggerOnce={true} direction="left">
+          <Reviews
+            dp={dp1}
+            name="Esky"
+            comment="Works Excellently for me, effortless reach and netwroking. Big help, great asset!"
+          />
+        </Fade>
         {/* </Tilt> */}
         <Fade triggerOnce={true} direction="down">
           <Reviews

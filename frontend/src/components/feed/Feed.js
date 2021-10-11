@@ -4,8 +4,8 @@ import Leftpane from "./Leftpane";
 import Rightpane from "./Rightpane";
 import Allposts from "./Allposts";
 import Navbar from "../homepage/Navbar";
-import Overlay from "react-overlay-component";
-import SideNav from "react-simple-sidenav";
+// import Overlay from "react-overlay-component";
+// import SideNav from "react-simple-sidenav";
 import SlidingPane from "react-sliding-pane";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -27,7 +27,7 @@ const Feed = (props) => {
       x: "100vw",
     },
   };
-  
+
   return (
     <motion.div
       className={classes.wrapper}
@@ -55,7 +55,7 @@ const Feed = (props) => {
           }}
           width="50%"
         >
-          <Rightpane overlay={true}/>
+          <Rightpane overlay={true} />
         </SlidingPane>
 
         <SlidingPane
@@ -66,26 +66,26 @@ const Feed = (props) => {
           width="11rem"
           overlayClassName={{
             overlay: {
-              position: 'fixed',
+              position: "fixed",
               top: 0,
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(255, 255, 255, 0.75)'
+              backgroundColor: "rgba(255, 255, 255, 0.75)",
             },
             content: {
-              position: 'absolute',
-              top: '40px',
-              left: '40px',
-              right: '40px',
-              bottom: '40px',
-              border: '1px solid #ccc',
-              background: '#fff',
-              overflow: 'auto',
-              WebkitOverflowScrolling: 'touch',
-              borderRadius: '4px',
-              outline: 'none',
-            }
+              position: "absolute",
+              top: "40px",
+              left: "40px",
+              right: "40px",
+              bottom: "40px",
+              border: "1px solid #ccc",
+              background: "#fff",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+            },
           }}
         >
           <ul className={classes.overlay}>
@@ -115,7 +115,7 @@ const Feed = (props) => {
         <Allposts user={user} />
 
         <div className={classes.flexrightpane}>
-          <Rightpane rightpane={true}/>
+          <Rightpane rightpane={true} />
         </div>
       </div>
     </motion.div>

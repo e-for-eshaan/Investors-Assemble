@@ -93,7 +93,6 @@ const OtherUserProfile = (props) => {
             from="left"
             onRequestClose={() => setState({ isPaneOpenLeft: false })}
             width="50%"
-            from="left"
           >
             <ul className={classes.overlay}>
               {loggedUser && (

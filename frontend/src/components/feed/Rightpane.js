@@ -23,7 +23,9 @@ const Rightpane = (props) => {
   }, []);
 
   return (
-    <div className={props.rightpane==true ? classes.rightpane : classes.overlay}>
+    <div
+      className={props.rightpane === true ? classes.rightpane : classes.overlay}
+    >
       <div className={classes.scroll}>
         <h3 className={classes.head}>News</h3>
         {news != null ? (
@@ -32,7 +34,7 @@ const Rightpane = (props) => {
               if (item.image) return item;
             })
             .map((item) => (
-              <a href={item.url} target="_blank">
+              <a href={item.url} target="_blank" rel="noreferrer">
                 {" "}
                 <Card image={item.image} text={item.title} />{" "}
               </a>
