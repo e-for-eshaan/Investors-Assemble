@@ -15,9 +15,6 @@ import Profile from "./components/profile/Profile";
 import { useContext, useLocation } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { AnimatePresence } from "framer-motion";
-import { loginUsingToken } from "./apiCalls";
-
-import { useEffect } from "react";
 
 function App() {
   // const [user, setUser] = useState({})
