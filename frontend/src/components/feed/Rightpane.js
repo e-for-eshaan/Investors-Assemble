@@ -35,7 +35,6 @@ const Rightpane = (props) => {
             })
             .map((item) => (
               <a href={item.url} target="_blank" rel="noreferrer">
-                {" "}
                 <Card image={item.image} text={item.title} />{" "}
               </a>
             ))

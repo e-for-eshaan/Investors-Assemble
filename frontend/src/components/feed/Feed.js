@@ -47,13 +47,11 @@ const Feed = (props) => {
         <Leftpane user={user} />
         <SlidingPane
           isOpen={state.isPaneOpen}
-          title="Hey, it is optional pane title.  I can be React component too."
-          subtitle="Optional subtitle."
           onRequestClose={() => {
             // triggered on "<" on left top click or on outside click
             setState({ isPaneOpen: false });
           }}
-          width="50%"
+          width="70%"
         >
           <Rightpane overlay={true} />
         </SlidingPane>
@@ -82,7 +80,7 @@ const Feed = (props) => {
               </Link>
             )}
             <li className={classes.listitem}>
-              <button onClick={() => setState({ isPaneOpen: true })}>
+              <button className = {classes.btn} onClick={() => setState({ isPaneOpen: true })}>
                 News
               </button>
             </li>
