@@ -36,7 +36,6 @@
 }
 
 .btn {
-    background-color: teal;
     color: white;
     border-radius: 0.5rem;
     border: none;
@@ -44,11 +43,15 @@
     font-family: "Roboto Slab";
     margin-right: 1%;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.151);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
 }
 
 .btn:hover {
     font-family: "Roboto Slab";
-    background-color: teal;
+    background: rgba(255, 255, 255, 0.39);
     font-weight: bolder;
     cursor: pointer;
 }
@@ -56,4 +59,8 @@
 .fileupload {
     cursor: pointer;
     display: none;
+}
+
+* {
+    color: white;
 }

@@ -49,6 +49,10 @@
     flex-direction: column;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .textarea {
     padding: 0.2rem;
     border-radius: 0.5rem;

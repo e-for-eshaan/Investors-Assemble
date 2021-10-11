@@ -36,7 +36,7 @@ const Form = () => {
           placeholder="Password"
           ref={password}
         />
-        <button type="submit" disabled={isFetching}>
+        <button className = {classes.btn} type="submit" disabled={isFetching}>
           {isFetching ? "Logging In" : "Log In"}
         </button>
         <h4>New User?</h4>

@@ -2,9 +2,9 @@ import classes from "./Login.module.css";
 import React from "react";
 import Form from "./Form";
 
-const Login = () => {
+const Login = (props) => {
   return (
-    <div className={classes.login}>
+    <div className={props.overlay ? classes.overlay : classes.login} >
       <Form />
     </div>
   );

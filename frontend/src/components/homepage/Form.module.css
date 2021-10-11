@@ -36,22 +36,28 @@ input::placeholder {
     transition: 0.25s;
 }
 
-button {
+.btn {
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
     padding: 0.5rem;
     border-radius: 0.7rem;
     margin: 1rem;
     font-family: 'Roboto Slab';
     border: none;
-    background-color: white;
     cursor: pointer;
+    color: rgb(122, 122, 122);
 }
 
 button:hover {
+    color: white;
     background-color: rgb(255, 195, 195);
     transition: 0.5s;
 }
 
 button:focus {
+    color: white;
     background-color: #ff9999;
     color: black;
     transition: 0.1s;

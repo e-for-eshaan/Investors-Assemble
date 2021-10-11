@@ -9,11 +9,13 @@
 }
 
 .bg1 {
+    max-height: 100%;
     position: absolute;
     width: 50%;
     left: 0;
     bottom: 9rem;
     transform: scaleX(-100%);
+    max-height: 40%;
 }
 
 .wrap p {
@@ -25,6 +27,7 @@
     width: 50%;
     right: 0;
     bottom: 9rem;
+    max-height: 30%;
 }
 
 .head {
@@ -45,4 +48,18 @@
     display: flex;
     max-width: 100%;
     margin: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    .container,
+    .wrap {
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .head {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
 }

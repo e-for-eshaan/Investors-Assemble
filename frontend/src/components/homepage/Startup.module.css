@@ -17,3 +17,10 @@
     margin: 0;
     margin-bottom: 3rem;
 }
+
+@media only screen and (max-width: 460px) {
+    .wrapper {
+        width: 2rem;
+        height: 2rem;
+    }
+}
