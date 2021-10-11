@@ -32,9 +32,9 @@ const OtherUserPosts = (props) => {
           alt="404_user_img"
         />
         {loggedUser._id === user._id ? (
-          <Link to="/user/profile">
-            <h2>{user.name}</h2>
-          </Link>
+          
+            <h2><Link to="/user/profile" style={{textDecoration:'none'}}>{user.name}</Link></h2>
+          
         ) : (
           <Link to={`/user/otherprofile/${user._id}`}>
             <h2>{user.name}</h2>

@@ -39,8 +39,8 @@ const Navbar = (props) => {
           </Link>
         )}
         {user && (
-          <li className={classes.listitem}>
-            <button onClick={logoutHandler}>Log Out</button>
+          <li className={classes.listitem} onClick={logoutHandler} style={{cursor:'pointer'}}>
+           Log Out
           </li>
         )}
         {!user && (

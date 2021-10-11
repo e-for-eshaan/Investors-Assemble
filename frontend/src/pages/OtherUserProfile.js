@@ -58,6 +58,7 @@ const OtherUserProfile = (props) => {
         round="0"
         clicker={() => setState({ isPaneOpenLeft: true })}
       />
+
       <div className={classes.container}>
         <div className={classes.leftpane}>
           <img
@@ -71,6 +72,9 @@ const OtherUserProfile = (props) => {
             {" "}
             Joined: {format(otherUser.createdAt)}
           </h3>
+          <button className = {classes.btn} onClick={() => setState({ isPaneOpen: true })}>
+            Contact
+          </button>
         </div>
         <div className={classes.rightpane}>
           {userPosts.length > 0
@@ -86,6 +90,7 @@ const OtherUserProfile = (props) => {
                 />
               ))
             : "NO POSTS AVAILABLE"}
+
           <SlidingPane
             closeIcon={<div>Some div containing custom close icon.</div>}
             isOpen={state.isPaneOpenLeft}
@@ -95,22 +100,39 @@ const OtherUserProfile = (props) => {
             width="50%"
           >
             <ul className={classes.overlay}>
-              {loggedUser && (
-                <Link to="/feed" className={classes.listitem}>
-                  <li className={classes.listitem}>Feed</li>
-                </Link>
-              )}
-              {loggedUser && (
-                <Link to="/user/profile" className={classes.listitem}>
-                  <li className={classes.listitem}>Profile</li>
-                </Link>
-              )}
-              {loggedUser && (
-                <Link to="/logout" className={classes.listitem}>
-                  <li className={classes.listitem}>Log Out</li>
-                </Link>
-              )}
+              <Link to="/feed" className={classes.listitem}>
+                <li className={classes.listitem}>Feed</li>
+              </Link>
+
+              <li className={classes.listitem}>
+                <button className = {classes.btn} onClick={() => setState({ isPaneOpen: true })}>
+                  Contact
+                </button>
+              </li>
+
+              <Link to="/logout" className={classes.listitem}>
+                <li className={classes.listitem}>Log Out</li>
+              </Link>
             </ul>
+          </SlidingPane>
+          <SlidingPane
+            isOpen={state.isPaneOpen}
+            title="Hey, it is optional pane title.  I can be React component too."
+            subtitle="Optional subtitle."
+            onRequestClose={() => {
+              // triggered on "<" on left top click or on outside click
+              setState({ isPaneOpen: false });
+            }}
+            width="60%"
+          >
+            <form className={classes.form}>
+              <h3>CONTACT</h3>
+              <input type="text" placeholder="Enter Name" />
+              <input type="text" placeholder="Enter Message" />
+              <input type="text" placeholder="Enter Email" />
+              <textarea placeholder="Enter Text Message" />
+              <button className = {classes.btn} type="submit">Submit</button>
+            </form>
           </SlidingPane>
         </div>
       </div>
