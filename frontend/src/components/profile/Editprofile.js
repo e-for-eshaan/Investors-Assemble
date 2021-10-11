@@ -86,7 +86,11 @@ const Editprofile = (props) => {
       <div className={classes.container}>
         <div className={classes.leftpane}>
           <img
-            src={user.avatar === "" ? props.image : user.avatar}
+            src={
+              user.avatar === ""
+                ? props.image
+                : `http://localhost:5000/images/${user.avatar}`
+            }
             alt="404_user_img"
           />
           <h2>{user.name}</h2>
@@ -102,7 +106,7 @@ const Editprofile = (props) => {
           onRequestClose={() => setState({ isPaneOpenLeft: false })}
           width="90%"
         >
-          <div className = {classes.overlay}>
+          <div className={classes.overlay}>
             <img
               src={user.avatar === "" ? props.image : user.avatar}
               alt="404_user_img"

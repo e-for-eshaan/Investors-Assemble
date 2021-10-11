@@ -53,14 +53,15 @@ const Profile = (props) => {
       exit="out"
       variants={pageTransition}
     >
-      <Navbar
-        round="0"
-        clicker={() => setState({ isPaneOpenLeft: true })}
-      />
+      <Navbar round="0" clicker={() => setState({ isPaneOpenLeft: true })} />
       <div className={classes.container}>
         <div className={classes.leftpane}>
           <img
-            src={user.avatar === "" ? props.image : user.avatar}
+            src={
+              user.avatar === ""
+                ? props.image
+                : `http://localhost:5000/images/${user.avatar}`
+            }
             alt="404_user_img"
           />
           <h2>{user.name}</h2>

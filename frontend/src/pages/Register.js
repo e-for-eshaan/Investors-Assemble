@@ -9,6 +9,7 @@ import startup from "../components/images/startup.jpg";
 import { motion } from "framer-motion";
 import SlidingPane from "react-sliding-pane";
 import Login from "../components/homepage/Login";
+
 const Home = () => {
   const name = useRef();
   const email = useRef();
@@ -18,8 +19,9 @@ const Home = () => {
   const contactNo = useRef();
   const bio = useRef();
   // const investorOrStartup = useRef();
-  const avatar = useRef();
+
   const [type, settype] = useState("Startup");
+  const [file, setFile] = useState(null);
 
   const history = useHistory();
   const [state, setState] = useState({
@@ -35,12 +37,26 @@ const Home = () => {
         name: name.current.value,
         email: email.current.value,
         password: password.current.value,
+        avatar: "",
         contactNo: contactNo.current.value,
-        avatar: avatar.current.value,
         isInvestor: type === "Startup" ? 0 : 1,
         location: location.current.value,
         bio: bio.current.value,
       };
+
+      if (file) {
+        // console.log(file);
+        const data = new FormData();
+        // const fileName = Date.now() + file.name;
+        data.append("file", file);
+        data.append("name", file.name);
+        user.avatar = file.name;
+        try {
+          await axios.post("/api/upload", data);
+        } catch (err) {
+          console.log(err);
+        }
+      }
       // registering the user using API
       try {
         await axios.post("/api/auth/register", user);
@@ -159,20 +175,20 @@ const Home = () => {
             placeholder="Confirm password"
           />
           <br />
-          <button className={classes.btn}>
-            <label htmlFor="img">
-              Upload Image
-              <input
-                className={classes.input}
-                style={{ display: "none" }}
-                type="file"
-                name="avatar"
-                ref={avatar}
-                id="img"
-                accept=".png,.jpeg,.jpg"
-              />
-            </label>
-          </button>
+
+          <label htmlFor="file" style={{ cursor: "pointer" }}>
+            Upload Image
+          </label>
+          <input
+            type="file"
+            id="file"
+            required
+            accept=".png,.jpeg,.jpg"
+            style={{ display: "none", cursor: "pointer" }}
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+
+          {file && <h4>{file.name}</h4>}
           <button className={classes.btn} type="submit">
             Sign Up
           </button>

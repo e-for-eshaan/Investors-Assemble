@@ -8,7 +8,11 @@ const Leftpane = (props) => {
   return (
     <div className={classes.leftpane}>
       <img
-        src={user.avatar === "" ? dp : user.avatar}
+        src={
+          user.avatar === ""
+            ? dp
+            : `http://localhost:5000/images/${user.avatar}`
+        }
         alt="404_user_img"
         className={classes.dp}
       />

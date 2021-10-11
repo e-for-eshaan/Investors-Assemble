@@ -17,7 +17,7 @@ const Makepost = () => {
       img: "",
     };
     if (file) {
-      console.log(file);
+      // console.log(file);
       const data = new FormData();
       // const fileName = Date.now() + file.name;
       data.append("file", file);
