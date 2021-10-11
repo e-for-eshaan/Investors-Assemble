@@ -9,7 +9,7 @@ const Rightpane = (props) => {
   const fetcher = async () => {
     await axios
       .get(
-        "http://api.mediastack.com/v1/news?access_key=765ab931ef6ff3b1f1b9e468d21693d5&categories=business&languages=en"
+        "http://api.mediastack.com/v1/news?access_key=5d1ccd3b48f4399e0e6996211f0ed57b&categories=business&languages=en"
       )
       .then((response) => {
         console.log(response.data.data);
@@ -31,7 +31,7 @@ const Rightpane = (props) => {
         {news != null ? (
           news
             .filter((item) => {
-              if (item.image) return item;
+              return item.image;
             })
             .map((item) => (
               <a href={item.url} target="_blank" rel="noreferrer">

@@ -5,9 +5,7 @@ import dp from "../images/profile.png";
 import { format } from "timeago.js";
 import { motion } from "framer-motion";
 import SlidingPane from "react-sliding-pane";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import Leftpane from "../feed/Leftpane";
 
 const Editprofile = (props) => {
   const name = useRef();

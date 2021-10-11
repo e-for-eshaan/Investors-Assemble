@@ -138,7 +138,6 @@ const Home = () => {
               }}
               src={investor}
               alt=""
-              style={{ cursor: "pointer" }}
               style={type === "Investor" ? { opacity: "1" } : null}
             />
             <img
@@ -148,7 +147,6 @@ const Home = () => {
               }}
               src={startup}
               alt=""
-              style={{ cursor: "pointer" }}
               style={type === "Startup" ? { opacity: "1" } : null}
             />
           </div>
