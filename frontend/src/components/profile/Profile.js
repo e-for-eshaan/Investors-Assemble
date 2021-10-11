@@ -59,11 +59,10 @@ const Profile = (props) => {
           <h1>MY POSTS</h1>
           {userPosts.length > 0
             ? userPosts.map((post) => (
-                <Fade delay={2}>
+                <Fade delay={2} key={post._id}>
                   <Newpost
                     postId={post._id}
                     loggedUser={user}
-                    key={post._id}
                     userId={post.userId}
                     time={format(post.createdAt)}
                     desc={post.desc}
@@ -79,7 +78,6 @@ const Profile = (props) => {
             from="left"
             onRequestClose={() => setState({ isPaneOpenLeft: false })}
             width="50%"
-            from="left"
           >
             <ul className={classes.overlay}>
               {user && (

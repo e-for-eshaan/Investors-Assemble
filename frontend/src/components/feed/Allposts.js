@@ -33,11 +33,10 @@ const Allposts = (props) => {
       {posts.length === 0 ? <h4>No Posts😿</h4> : <h4>All Posts🚀</h4>}
       {posts.length > 0 &&
         posts.map((post) => (
-          <Fade delay={2}>
+          <Fade delay={2} key={post._id}>
             <Newpost
               postId={post._id}
               loggedUser={user}
-              key={post._id}
               userId={post.userId}
               time={format(post.createdAt)}
               desc={post.desc}
