@@ -120,7 +120,7 @@ const OtherUserProfile = (props) => {
                 />
               ))
             : "NO POSTS AVAILABLE"}
-
+            <div className = {classes.temp}>x</div>
           <SlidingPane
             closeIcon={<div>Some div containing custom close icon.</div>}
             isOpen={state.isPaneOpenLeft}

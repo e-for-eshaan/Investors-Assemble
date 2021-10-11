@@ -1,5 +1,5 @@
 .newpost {
-    margin: 4% 8% 4% 8%;
+    margin: 2rem;
     border-radius: 1.1rem;
     text-align: left;
     padding: 1rem;
@@ -10,6 +10,11 @@
     -webkit-backdrop-filter: blur( 4px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
+    border-radius: 1.1rem;
+    text-align: left;
+    padding: 0.8rem;
+    align-content: center;
+    margin: 2rem;
 }
 
 .delete {
@@ -23,7 +28,7 @@
 @media screen and (min-width: 0px) and (max-width: 700px) {
     .newpost {
         margin: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 10rem;
         border-radius: 1.1rem;
         text-align: left;
         padding: 0.8rem;
@@ -34,6 +39,12 @@
         margin: auto;
         border-radius: 1rem;
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 680px) {
+    .newpost {
+        margin: 2rem;
     }
 }
 

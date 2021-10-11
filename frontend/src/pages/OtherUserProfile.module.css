@@ -128,16 +128,13 @@ form::placeholder {
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow-y: scroll;
+    margin-bottom: 10rem;
 }
 
-.rightpane {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
+.temp {
+    height: 10rem;
+    width: 1rem;
 }
 
 .leftpane img {
@@ -177,30 +174,16 @@ form::placeholder {
     align-self: flex-end;
     font-weight: lighter;
     margin: auto;
-    margin-bottom: 1rem;
     display: block;
+    margin-bottom: 5rem;
 }
 
 .rightpane {
     display: flex;
     flex-direction: column;
-}
-
-.rightpane input,
-textarea {
-    margin: 1rem;
-}
-
-.rightpane table {
-    width: 80%;
-    padding: 1rem;
-    margin: auto;
-    vertical-align: top;
-}
-
-.rightpane td,
-input {
-    vertical-align: top;
-    margin: 0;
-    padding-top: 0;
+    width: 100%;
+    max-height: calc(100%-4rem);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
 }

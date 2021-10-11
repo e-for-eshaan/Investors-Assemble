@@ -44,7 +44,6 @@ const Profile = (props) => {
     },
   };
 
-
   return (
     <motion.div
       className={classes.wrapper}
@@ -55,7 +54,6 @@ const Profile = (props) => {
       variants={pageTransition}
     >
       <Navbar
-        pos="relative"
         round="0"
         clicker={() => setState({ isPaneOpenLeft: true })}
       />
@@ -92,30 +90,29 @@ const Profile = (props) => {
               ))
             : "NO POSTS AVAILABLE"}
           <SlidingPane
-            closeIcon={<div>Some div containing custom close icon.</div>}
             isOpen={state.isPaneOpenLeft}
-            title="Hey, it is optional pane title.  I can be React component too."
             from="left"
             onRequestClose={() => setState({ isPaneOpenLeft: false })}
-            width="50%"
+            width="90%"
           >
-            <ul className={classes.overlay}>
-              {user && (
-                <Link to="/feed" className={classes.listitem}>
-                  <li className={classes.listitem}>Feed</li>
+            <div className={classes.overlay}>
+              <img
+                src={user.avatar === "" ? props.image : user.avatar}
+                alt="404_user_img"
+              />
+              <h2>{user.name}</h2>
+              <h3> {user.isInvestor === 0 ? "Startup" : "Investor"}</h3>
+              <p className={classes.bio}>{user.bio}</p>
+              <h3 className={classes.date}>
+                {" "}
+                Joined: {format(user.createdAt)}
+              </h3>
+              {userId === user._id && (
+                <Link to="/user/editprofile">
+                  <h3>Edit Profile</h3>
                 </Link>
               )}
-              {user && (
-                <Link to="/user/profile" className={classes.listitem}>
-                  <li className={classes.listitem}>Profile</li>
-                </Link>
-              )}
-              {user && (
-                <Link to="/logout" className={classes.listitem}>
-                  <li className={classes.listitem}>Log Out</li>
-                </Link>
-              )}
-            </ul>
+            </div>
           </SlidingPane>
         </div>
       </div>

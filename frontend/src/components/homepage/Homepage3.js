@@ -28,7 +28,7 @@ const Homepage3 = () => {
           <Reviews
             dp={dp1}
             name="Esky"
-            comment="Works Excellently for me, effortless reach and netwroking. Big help, great asset!"
+            comment="Works excellently for me, effortless reach and networking. Big help, great asset!"
           />
         </Fade>
         {/* </Tilt> */}

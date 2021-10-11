@@ -33,6 +33,7 @@
     border-radius: 0.8rem;
     opacity: 0.5;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .form {

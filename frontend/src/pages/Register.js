@@ -7,6 +7,8 @@ import axios from "axios";
 import investor from "../components/images/investor.jpg";
 import startup from "../components/images/startup.jpg";
 import { motion } from "framer-motion";
+import SlidingPane from "react-sliding-pane";
+import Login from "../components/homepage/Login";
 const Home = () => {
   const name = useRef();
   const email = useRef();
@@ -20,7 +22,10 @@ const Home = () => {
   const [type, settype] = useState("Startup");
 
   const history = useHistory();
-
+  const [state, setState] = useState({
+    isPaneOpen: false,
+    isPaneOpenLeft: false,
+  });
   const handleRegisterClick = async (e) => {
     e.preventDefault();
     if (confirmpassword.current.value !== password.current.value) {
@@ -65,7 +70,8 @@ const Home = () => {
       exit="out"
       variants={pageTransition}
     >
-      <Navbar pos="relative" />
+      <Navbar clicker={() => setState({ isPaneOpenLeft: true })} />
+
       <div className={classes.container}>
         <form className={classes.form} onSubmit={handleRegisterClick}>
           <h1>Sign Up</h1>
@@ -107,7 +113,7 @@ const Home = () => {
             placeholder="Are you an Investor or a Startup? Type 'Investor' or 'Startup'"
             required
           /> */}
-          <h3 style={{marginTop:'2rem'}}>Investor or a Startup?</h3>
+          <h3 style={{ marginTop: "2rem" }}>Investor or a Startup?</h3>
           <div className={classes.images}>
             <img
               onClick={() => {
@@ -117,9 +123,7 @@ const Home = () => {
               src={investor}
               alt=""
               style={{ cursor: "pointer" }}
-              style={
-                type === "Investor" ? { opacity: "1" } : null
-              }
+              style={type === "Investor" ? { opacity: "1" } : null}
             />
             <img
               onClick={() => {
@@ -129,9 +133,7 @@ const Home = () => {
               src={startup}
               alt=""
               style={{ cursor: "pointer" }}
-              style={
-                type === "Startup" ? { opacity: "1" } : null
-              }
+              style={type === "Startup" ? { opacity: "1" } : null}
             />
           </div>
           <textarea
@@ -176,6 +178,15 @@ const Home = () => {
           </button>
         </form>
       </div>
+      <SlidingPane
+        isOpen={state.isPaneOpenLeft}
+        title="Menu"
+        from="left"
+        onRequestClose={() => setState({ isPaneOpenLeft: false })}
+        width="90%"
+      >
+        <Login display="unset" overlay="true" />
+      </SlidingPane>
       <Footer />
     </motion.div>
   );

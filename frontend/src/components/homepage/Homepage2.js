@@ -28,7 +28,7 @@ const Homepage2 = () => {
         <Fade triggerOnce={true} delay={200}>
           <Card
             imgsrc={img2}
-            comment="The only we way this app works is if your ideas are worth it. If that idea sells, Our app works"
+            comment="The only way this app works is if your ideas are worth it. If that idea sells, Our app works"
             heading="Sell your grey matter"
           />
         </Fade>
@@ -42,7 +42,7 @@ const Homepage2 = () => {
         <Fade triggerOnce={true} delay={600}>
           <Card
             imgsrc={img4}
-            comment="If money grows, make it work! Hire people, find investors, find something to invest in. We are here for your endevours"
+            comment="If money grows, make it work! Hire people, find investors, find something to invest in. We are here for your endeavours"
             heading="Find and recruit"
           />
         </Fade>
