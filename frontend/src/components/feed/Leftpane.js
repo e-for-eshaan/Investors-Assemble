@@ -19,7 +19,7 @@ const Leftpane = (props) => {
       <div className={classes.btn}>{user.name}</div>
       <div className={classes.btn}>{user.location}</div>
       <div className={classes.btn}>
-        {user.isInvestor === 0 ? "Startup" : "Investor"}
+        {user.isInvestor  ? "Investor" : "Startup"}
       </div>
     </div>
   );

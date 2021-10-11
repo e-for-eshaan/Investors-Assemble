@@ -65,7 +65,7 @@ const Profile = (props) => {
             alt="404_user_img"
           />
           <h2>{user.name}</h2>
-          <h3> {user.isInvestor === 0 ? "Startup" : "Investor"}</h3>
+          <h3> {user.isInvestor ? "Investor" : "Startup"}</h3>
           <p className={classes.bio}>{user.bio}</p>
           <h3 className={classes.date}> Joined: {format(user.createdAt)}</h3>
           {userId === user._id && (
