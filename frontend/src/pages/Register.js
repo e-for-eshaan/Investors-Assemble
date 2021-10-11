@@ -15,8 +15,9 @@ const Home = () => {
   const location = useRef();
   const contactNo = useRef();
   const bio = useRef();
-  const investorOrStartup = useRef();
+  // const investorOrStartup = useRef();
   const avatar = useRef();
+  const [type, settype] = useState("Startup");
 
   const history = useHistory();
 
@@ -31,7 +32,7 @@ const Home = () => {
         password: password.current.value,
         contactNo: contactNo.current.value,
         avatar: avatar.current.value,
-        isInvestor: investorOrStartup.current.value === "Investor" ? 1 : 0,
+        isInvestor: type === "Startup" ? 0 : 1,
         location: location.current.value,
         bio: bio.current.value,
       };
@@ -55,7 +56,6 @@ const Home = () => {
       x: "100vw",
     },
   };
-  const [type, settype] = useState("Startup");
   return (
     <motion.div
       className={classes.wrapper}
@@ -100,22 +100,28 @@ const Home = () => {
             ref={contactNo}
             required
           />
-          <input
+          {/* <input
             className={classes.input}
             ref={investorOrStartup}
             type="text"
             placeholder="Are you an Investor or a Startup? Type 'Investor' or 'Startup'"
             required
-          />
+          /> */}
           <div className={classes.images}>
             <img
-              onClick={() => {settype("Investor");console.log(type)}}
+              onClick={() => {
+                settype("Investor");
+                console.log(type);
+              }}
               src={investor}
               alt=""
               style={{ cursor: "pointer" }}
             />
             <img
-              onClick={() => {settype("Startup");console.log(type)}}
+              onClick={() => {
+                settype("Startup");
+                console.log(type);
+              }}
               src={startup}
               alt=""
               style={{ cursor: "pointer" }}
