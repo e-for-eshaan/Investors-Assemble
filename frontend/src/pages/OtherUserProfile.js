@@ -1,5 +1,5 @@
 import classes from "./OtherUserProfile.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/homepage/Navbar";
 import dp from "../components/images/profile.png";
 import OtherUserPosts from "../components/feed/OtherUserPosts";
@@ -7,6 +7,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { format } from "timeago.js";
+import emailjs from "emailjs-com";
 import SlidingPane from "react-sliding-pane";
 
 const OtherUserProfile = (props) => {
@@ -15,8 +16,34 @@ const OtherUserProfile = (props) => {
   const [userPosts, setUserPosts] = useState([]);
   const [otherUser, setOtherUser] = useState([]);
 
+  // contact form
+  const contactFormRef = useRef();
+  const [isSubmit, setIsSubmit] = useState("Submit");
+
   // const { otherUserId } = props;
-  const loggedUser = props.user;
+  // const loggedUser = props.user;
+  const handleContactSubmit = (e) => {
+    contactFormRef.current.to_email = otherUser.email;
+    contactFormRef.current.to_name = otherUser.name;
+    console.log(contactFormRef.current.to_email);
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_nkospg8",
+        "template_os0sw0q",
+        contactFormRef.current,
+        "user_fdDgGPipNkPCsq5QhBwlE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setIsSubmit("Submitted!");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -72,7 +99,10 @@ const OtherUserProfile = (props) => {
             {" "}
             Joined: {format(otherUser.createdAt)}
           </h3>
-          <button className = {classes.btn} onClick={() => setState({ isPaneOpen: true })}>
+          <button
+            className={classes.btn}
+            onClick={() => setState({ isPaneOpen: true })}
+          >
             Contact
           </button>
         </div>
@@ -105,7 +135,10 @@ const OtherUserProfile = (props) => {
               </Link>
 
               <li className={classes.listitem}>
-                <button className = {classes.btn} onClick={() => setState({ isPaneOpen: true })}>
+                <button
+                  className={classes.btn}
+                  onClick={() => setState({ isPaneOpen: true })}
+                >
                   Contact
                 </button>
               </li>
@@ -125,13 +158,27 @@ const OtherUserProfile = (props) => {
             }}
             width="60%"
           >
-            <form className={classes.form}>
+            <form
+              className={classes.form}
+              ref={contactFormRef}
+              onSubmit={handleContactSubmit}
+            >
               <h3>CONTACT</h3>
-              <input type="text" placeholder="Enter Name" />
-              <input type="text" placeholder="Enter Message" />
-              <input type="text" placeholder="Enter Email" />
-              <textarea placeholder="Enter Text Message" />
-              <button className = {classes.btn} type="submit">Submit</button>
+              <input type="text" name="user_name" placeholder="Enter Name" />
+              <input type="text" name="user_subject" placeholder="Subject" />
+              <input type="text" name="user_email" placeholder="Enter Email" />
+              <textarea placeholder="Enter Your Message" name="user_message" />
+              <button
+                style={
+                  isSubmit === "Submit"
+                    ? null
+                    : { backgroundColor: "#4BB543", opacity: "0.8" }
+                }
+                className={classes.btn}
+                type="submit"
+              >
+                {isSubmit}
+              </button>
             </form>
           </SlidingPane>
         </div>
