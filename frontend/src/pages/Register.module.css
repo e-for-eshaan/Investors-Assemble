@@ -2,14 +2,17 @@
     margin: 0.3rem;
     padding: 0.2rem;
     border-radius: 0.5rem;
-    border: 2px green solid;
     outline: none;
     font-family: "Roboto Slab";
-    color: green;
-    background-color: rgb(211, 255, 228);
     width: 28%;
     max-width: 20rem;
     transition: 0.5s;
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
 .input:focus {
@@ -38,6 +41,7 @@
 
 .container {
     overflow-y: scroll;
+    padding-bottom: 3rem;
 }
 
 .wrapper {
@@ -49,16 +53,34 @@
     flex-direction: column;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 .textarea {
     padding: 0.2rem;
     border-radius: 0.5rem;
     border: 2px green solid;
-    background-color: rgb(211, 255, 240);
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
     resize: none;
     outline: none;
     height: 5rem;
+}
+
+.btn {
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Roboto Slab';
+    border-radius: 0.3rem;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.473);
+    cursor: pointer;
 }

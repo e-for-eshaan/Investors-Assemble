@@ -19,8 +19,3 @@ const Card = (props) => {
 
 export default Card;
 
-Card.defaultProps = {    
-  heading: "Something",    
-  comment: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cum voluptatem hic ea incidunt facilis omnis, eligendi itaque at et",    
-  photo: "120"
-}
