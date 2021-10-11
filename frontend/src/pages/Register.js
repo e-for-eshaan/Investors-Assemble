@@ -107,6 +107,7 @@ const Home = () => {
             placeholder="Are you an Investor or a Startup? Type 'Investor' or 'Startup'"
             required
           /> */}
+          <h3 style={{marginTop:'2rem'}}>Investor or a Startup?</h3>
           <div className={classes.images}>
             <img
               onClick={() => {
@@ -116,6 +117,9 @@ const Home = () => {
               src={investor}
               alt=""
               style={{ cursor: "pointer" }}
+              style={
+                type === "Investor" ? { opacity: "1" } : null
+              }
             />
             <img
               onClick={() => {
@@ -125,6 +129,9 @@ const Home = () => {
               src={startup}
               alt=""
               style={{ cursor: "pointer" }}
+              style={
+                type === "Startup" ? { opacity: "1" } : null
+              }
             />
           </div>
           <textarea
