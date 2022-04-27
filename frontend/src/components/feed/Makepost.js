@@ -3,12 +3,12 @@ import React, { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
-const Makepost = () => {
+const Makepost = (props) => {
   const { user } = useContext(AuthContext);
   const [file, setFile] = useState(null);
 
   const desc = useRef();
-
+  const { setNewPostCreated } = props;
   const handlePostSubmit = async (e) => {
     e.preventDefault();
     const newPost = {
@@ -31,6 +31,7 @@ const Makepost = () => {
     }
     try {
       await axios.post("/api/posts/create", newPost);
+      setNewPostCreated(true);
       // window.location.reload();
     } catch (err) {
       console.log(err);

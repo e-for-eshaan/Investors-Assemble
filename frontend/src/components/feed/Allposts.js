@@ -8,10 +8,10 @@ import axios from "axios";
 
 const Allposts = (props) => {
   const { user } = props;
+  const { newPostCreated, setNewPostCreated } = props;
   // console.log(user);
   // state for storing all the posts in DB
   const [posts, setPosts] = useState([]);
-
   // fetching posts from DB
   useEffect(() => {
     let mounted = true;
@@ -27,11 +27,18 @@ const Allposts = (props) => {
     };
   }, []);
 
-
   return (
     <div className={classes.allposts}>
-      <Makepost />
-      {posts.length === 0 ? <h4>No Posts😿</h4> : <h4>All Posts🚀</h4>}
+      <Makepost
+        setPosts={setPosts}
+        newPostCreated={newPostCreated}
+        setNewPostCreated={setNewPostCreated}
+      />
+      {posts.length === 0 ? (
+        <h4 className={classes.postStatus}>No Posts😿</h4>
+      ) : (
+        <h4 className={classes.postStatus}>All Posts🚀</h4>
+      )}
       {posts.length > 0 &&
         posts.map((post) => (
           <Fade delay={2} key={post._id}>

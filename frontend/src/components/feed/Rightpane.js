@@ -33,8 +33,8 @@ const Rightpane = (props) => {
             .filter((item) => {
               return item.image;
             })
-            .map((item) => (
-              <a href={item.url} target="_blank" rel="noreferrer">
+            .map((item, index) => (
+              <a href={item.url} target="_blank" rel="noreferrer" key={index}>
                 <Card image={item.image} text={item.title} />{" "}
               </a>
             ))

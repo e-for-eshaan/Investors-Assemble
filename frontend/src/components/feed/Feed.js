@@ -13,6 +13,7 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import { Link } from "react-router-dom";
 const Feed = (props) => {
   const { user } = props;
+  const [newPostCreated, setNewPostCreated] = useState(false);
   const [state, setState] = useState({
     isPaneOpen: false,
     isPaneOpenLeft: false,
@@ -41,6 +42,8 @@ const Feed = (props) => {
         pos="unset"
         round="0"
         clicker={() => setState({ isPaneOpenLeft: true })}
+        newPostCreated={newPostCreated}
+        setNewPostCreated={setNewPostCreated}
       />
 
       <div className={classes.container}>
@@ -90,7 +93,11 @@ const Feed = (props) => {
           </ul>
         </SlidingPane>
 
-        <Allposts user={user} />
+        <Allposts
+          user={user}
+          newPostCreated={newPostCreated}
+          setNewPostCreated={setNewPostCreated}
+        />
 
         <div className={classes.flexrightpane}>
           <Rightpane rightpane={true} />

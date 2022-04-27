@@ -1,6 +1,6 @@
 import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = (props) => {
@@ -9,6 +9,15 @@ const Navbar = (props) => {
     e.preventDefault();
     dispatch({ type: "LOGOUT_SUCCESS" });
   };
+  const { newPostCreated, setNewPostCreated } = props;
+  useEffect(() => {
+    let refresh = document.querySelector("#refresher");
+    if (refresh && newPostCreated) {
+      refresh.click();
+      setNewPostCreated(false);
+    }
+  }, [newPostCreated, setNewPostCreated]);
+
   return (
     <nav
       className={classes.nav}
@@ -20,7 +29,9 @@ const Navbar = (props) => {
     >
       <Link to="/" style={{ textDecoration: "none" }}>
         {" "}
-        <div className={classes.logo}>Investor's Assemble</div>
+        <div className={classes.logo} id="refresher">
+          Investor's Assemble
+        </div>
       </Link>
       <ul className={classes.list}>
         {!user && (
@@ -39,8 +50,12 @@ const Navbar = (props) => {
           </Link>
         )}
         {user && (
-          <li className={classes.listitem} onClick={logoutHandler} style={{cursor:'pointer'}}>
-           Log Out
+          <li
+            className={classes.listitem}
+            onClick={logoutHandler}
+            style={{ cursor: "pointer" }}
+          >
+            Log Out
           </li>
         )}
         {!user && (

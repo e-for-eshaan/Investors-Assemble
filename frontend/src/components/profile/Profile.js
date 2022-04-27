@@ -75,7 +75,7 @@ const Profile = (props) => {
           )}
         </div>
         <div className={classes.rightpane}>
-          <h1>MY POSTS</h1>
+          <h1 className={classes.rightPaneHead}>MY POSTS</h1>
           {userPosts.length > 0
             ? userPosts.map((post) => (
                 <Fade delay={2} key={post._id}>

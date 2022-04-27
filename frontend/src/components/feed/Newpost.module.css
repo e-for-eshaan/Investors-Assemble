@@ -1,108 +1,109 @@
 .newpost {
+  margin: 2rem;
+  border-radius: 1.1rem;
+  text-align: left;
+  padding: 1rem;
+  align-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.1rem;
+  text-align: left;
+  padding: 0.8rem;
+  align-content: center;
+  margin: 2rem;
+}
+
+.delete {
+  /* style={{ cursor: "pointer" }, {position: "absolute"},{bottom:'0'},{right:'0'}} */
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: rgb(159, 159, 159) !important;
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .newpost {
     margin: 2rem;
-    border-radius: 1.1rem;
-    text-align: left;
-    padding: 1rem;
-    align-content: center;
-    background: rgba( 255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
+    margin-bottom: 10rem;
     border-radius: 1.1rem;
     text-align: left;
     padding: 0.8rem;
     align-content: center;
-    margin: 2rem;
-}
-
-.delete {
-    /* style={{ cursor: "pointer" }, {position: "absolute"},{bottom:'0'},{right:'0'}} */
-    cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-@media screen and (min-width: 0px) and (max-width: 700px) {
-    .newpost {
-        margin: 2rem;
-        margin-bottom: 10rem;
-        border-radius: 1.1rem;
-        text-align: left;
-        padding: 0.8rem;
-        align-content: center;
-    }
-    .image {
-        display: block;
-        margin: auto;
-        border-radius: 1rem;
-        width: 100%;
-    }
+  }
+  .image {
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 680px) {
-    .newpost {
-        margin: 2rem;
-    }
+  .newpost {
+    margin: 2rem;
+  }
 }
 
 .head {
-    display: flex;
+  display: flex;
 }
 
 .head img {
-    width: 3rem;
-    border-radius: 50%;
-    align-self: flex-start;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 1px solid black;
+  width: 3rem;
+  border-radius: 50%;
+  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: 1px solid black;
 }
 
 .head h2 {
-    display: inline-block;
-    margin: auto;
-    margin-left: 5%;
+  display: inline-block;
+  margin: auto;
+  margin-left: 5%;
 }
 
 .head h6 {
-    padding: 0;
-    margin: 0;
-    font-weight: lighter;
+  padding: 0;
+  margin: 0;
+  font-weight: lighter;
 }
 
 .time {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    max-height: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  max-height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .text {
-    margin-top: 1rem;
-    text-align: left;
-    zoom: 1;
-    overflow: hidden;
-    position: relative;
-    background: rgba( 255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
-    min-height: 3rem;
-    padding: 0.3rem;
+  margin-top: 1rem;
+  text-align: left;
+  zoom: 1;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  min-height: 3rem;
+  padding: 0.3rem;
 }
 
 .image {
-    float: left;
-    max-width: 40%;
-    max-height: 20rem;
-    border-radius: 10px;
-    margin-right: 1rem;
+  float: left;
+  max-width: 40%;
+  max-height: 20rem;
+  border-radius: 10px;
+  margin-right: 1rem;
 }

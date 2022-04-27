@@ -1,66 +1,63 @@
 .container {
-    font-family: "Roboto Slab";
-    background-color: #b9e6c2;
-    display: flex;
-    padding: 1rem;
-    justify-content: space-evenly;
-    background: rgba( 255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
-    border-radius: 10px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
+  font-family: "Roboto Slab";
+  background-color: #b9e6c2;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
 }
 
 .container h3 {
-    margin: auto;
+  margin: auto;
 }
 
 .container .input {
-    resize: none;
-    font-family: "Roboto Slab";
-    border-radius: 0.5rem;
-    border: none;
-    text-align: left;
-    padding-left: 0.5rem;
-    width: 100%;
-    margin: 0 1rem 0 1rem;
-    outline: none;
-    background: rgba( 255, 255, 255, 0.25);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
+  resize: none;
+  font-family: "Roboto Slab";
+  border-radius: 0.5rem;
+  border: none;
+  text-align: left;
+  padding-left: 0.5rem;
+  width: 100%;
+  margin: 0 1rem 0 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .btn {
-    color: white;
-    border-radius: 0.5rem;
-    border: none;
-    padding: 0.4rem;
-    font-family: "Roboto Slab";
-    margin-right: 1%;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.151);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
-    border-radius: 10px;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.4rem;
+  font-family: "Roboto Slab";
+  margin-right: 1%;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.151);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
 }
 
 .btn:hover {
-    font-family: "Roboto Slab";
-    background: rgba(255, 255, 255, 0.39);
-    font-weight: bolder;
-    cursor: pointer;
+  font-family: "Roboto Slab";
+  background: rgba(255, 255, 255, 0.39);
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .fileupload {
-    cursor: pointer;
-    display: none;
-}
-
-* {
-    color: white;
+  cursor: pointer;
+  display: none;
 }

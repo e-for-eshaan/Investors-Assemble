@@ -1,24 +1,28 @@
 .allposts {
-    flex: 2.5;
-    overflow-y: scroll;
+  flex: 2.5;
+  overflow-y: scroll;
+}
+
+.postStatus {
+  color: white !important;
 }
 
 .loader {
-    border: 0.5rem solid #c4e7e3;
-    border-top: 0.5rem solid #75c5b4;
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    animation: spin 2s linear infinite;
-    margin: auto;
-    margin-top: 3rem;
+  border: 0.5rem solid #c4e7e3;
+  border-top: 0.5rem solid #75c5b4;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  margin-top: 3rem;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
